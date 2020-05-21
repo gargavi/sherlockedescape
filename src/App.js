@@ -59,7 +59,7 @@ class App extends Component {
             return ( 
                 <Button className = "enterB" variant = "primary" onClick = {this.enteredRoom} > Dare to Enter..?</Button>
             )
-        }  else if (minutes == 0 && seconds == 0) { 
+        }  else if (this.state.minutes == 0 && this.state.seconds == 0) { 
             return ( 
                 <h1> Failure! </h1> 
             )
