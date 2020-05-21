@@ -1,0 +1,27 @@
+{
+    "remotePath": "./",
+    "host": "ftp://waws-prod-mwh-031.ftp.azurewebsites.windows.net/site/wwwroot",
+    "username": "sherlocker/$sherlocker",
+    "password": "pPsYev5zYj15MWHQDuoXd2iZo25etukasNrbpdxziyctxXdnWgxXti2W2wj3",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": true,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": ""
+    }
+}
