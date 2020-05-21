@@ -1,0 +1,7 @@
+#storyletter { 
+    transform: rotate(-3deg);
+    border-style: solid;
+    border-color: grey;
+    border-top-width: 4px;
+    border-left-width: 6px;
+}

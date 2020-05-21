@@ -1,0 +1,18 @@
+#introletter { 
+    transform: rotate(-3deg);
+    border-style: solid;
+    border-color: grey;
+    border-top-width: 4px;
+    border-left-width: 6px;
+}
+
+.buttonhold { 
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+
+.accept { 
+    color: white !important;
+    background-color: black !important;
+}
