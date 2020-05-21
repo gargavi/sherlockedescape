@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/sherlocked/static/css/main.a2b31067.chunk.css",
+    "main.js": "/sherlocked/static/js/main.4cdaa6f3.chunk.js",
+    "main.js.map": "/sherlocked/static/js/main.4cdaa6f3.chunk.js.map",
+    "runtime-main.js": "/sherlocked/static/js/runtime-main.8ee28e16.js",
+    "runtime-main.js.map": "/sherlocked/static/js/runtime-main.8ee28e16.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/sherlocked/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.0275efb3.chunk.js": "/sherlocked/static/js/2.0275efb3.chunk.js",
+    "static/js/2.0275efb3.chunk.js.map": "/sherlocked/static/js/2.0275efb3.chunk.js.map",
+    "index.html": "/sherlocked/index.html",
+    "precache-manifest.e9456829b3e9170d2dc56194b21017f0.js": "/sherlocked/precache-manifest.e9456829b3e9170d2dc56194b21017f0.js",
+    "service-worker.js": "/sherlocked/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/sherlocked/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.a2b31067.chunk.css.map": "/sherlocked/static/css/main.a2b31067.chunk.css.map",
+    "static/js/2.0275efb3.chunk.js.LICENSE.txt": "/sherlocked/static/js/2.0275efb3.chunk.js.LICENSE.txt",
+    "static/media/lock-icon.png": "/sherlocked/static/media/lock-icon.91fb9c5b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ee28e16.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.0275efb3.chunk.js",
+    "static/css/main.a2b31067.chunk.css",
+    "static/js/main.4cdaa6f3.chunk.js"
+  ]
+}
