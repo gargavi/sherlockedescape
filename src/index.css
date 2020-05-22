@@ -3,6 +3,7 @@ body {
   
 }
 
+
 .topmargin { 
   margin-top: 8%;
 }
@@ -15,7 +16,7 @@ body {
 }
 
 .letter p { 
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .letter { 
@@ -24,11 +25,23 @@ body {
   margin-left: 12%;
   text-align: justify;
   height: 750px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Dancing Script', cursive;
   width: 600px;
   margin-bottom: 4%;
+  transform: rotate(-3deg);
+  border-style: solid;
+  border-color: darkgray;
+  border-top-width: 4px;
+  border-left-width: 6px;
 }
 
+
+.reject { 
+  text-align: center;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  margin-top: 10%;
+}
 
 .closing { 
   text-align: right;
@@ -37,4 +50,65 @@ body {
 .closing p {
   margin: 0;
   font-size: 22px;
+  margin-top: 3%;
 }
+
+#remaining { 
+  color: red;
+  text-align: center;
+
+}
+
+#submitanswer { 
+  color: red !important;
+  background-color: white !important;
+  font-size: 20px;
+  height: 60px;
+  width: 100px;
+}
+/* Section for Home */ 
+#introletter { 
+  transform: rotate(-3deg);
+  border-style: solid;
+  border-color: grey;
+  border-top-width: 4px;
+  border-left-width: 6px;
+}
+
+#storyletter { 
+  transform: rotate(-3deg);
+}
+
+#passwordletter  input { 
+    display: inline-block;
+    width: 60%;
+    margin-top: 5%;
+    text-align: center;
+    border-style: none;
+}
+
+#passwordletter  h4 { 
+  display: inline-block;
+  width: 40%;
+  
+}
+
+.closing input { 
+  width: 20% !important;
+}
+
+.buttonhold { 
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  font-weight: bolder;
+}
+
+.accept { 
+  color: white !important;
+  background-color: black !important;
+}
+
+
+
+

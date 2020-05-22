@@ -3,17 +3,21 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Home from './components/Home';
 import Navigation from './components/Navigation';
 import Password from "./components/password";
-import Story from "./components/story"
+import Story from "./components/story";
+import Stageone from "./components/stageone";
+
 class App extends Component {
     constructor(props) { 
         super(props) 
         this.state = { 
             entered: false, 
-            minutes: 15, 
-            seconds: 0, 
+            minutes: 60, 
+            seconds: 0,
+            success: null,
             stages: [false, false, false, false]
         }
     }
@@ -25,6 +29,7 @@ class App extends Component {
     acceptChallenge = () => {
         var temp_stages = this.state.stages.slice(); 
         temp_stages[0] = true;
+        temp_stages[1] = true;
         this.setState({
             stages: temp_stages
         })
@@ -51,6 +56,12 @@ class App extends Component {
         }
     }
 
+    successfulmetric = (succ) => {
+        this.setState({
+            success: succ
+        })
+    }
+
     componentWillUnmount() {
         clearInterval(this.myInterval)
     }
@@ -60,11 +71,32 @@ class App extends Component {
                 <Button className = "enterB" variant = "primary" onClick = {this.enteredRoom} > Dare to Enter..?</Button>
             )
         }  else if (this.state.minutes == 0 && this.state.seconds == 0) { 
-            return ( 
-                <h1> Failure! </h1> 
-            )
-        
-        } else {
+            return (
+                <div class = "letter"> 
+                    <h3> Sorry! </h3>
+                    
+                    <p> You can easily try again by just hard refreshing the page (Ctrl-Shift-R on Windows
+                        or (Cmd-Shift-R on Mac).</p>
+                </div>
+            )   
+        } else if (this.state.success == true) { 
+            return (
+                <div class = "letter"> 
+                    <h3> Congrats! You have solved the puzzle! </h3> 
+
+                    <p> We hope you guys enjoyed the puzzle! </p>
+                </div>
+            )    
+        }else if (this.state.success == false) { 
+            return (
+                <div class = "letter"> 
+                    <h3> Sorry! </h3>
+                    
+                    <p> You can easily try again by just hard refreshing the page (Ctrl-Shift-R on Windows
+                        or (Cmd-Shift-R on Mac).</p>
+                </div>
+            )   
+        }else {
             return (
                 <div class = "container">
                     <div class = "row topmargin"> 
@@ -72,15 +104,16 @@ class App extends Component {
                         <div class = "col-md-9"> 
                             <Switch>
                                 <Route path="/" exact> <Home onclick = {this.acceptChallenge} /> </Route>
-                                <Route path = "/password" component = {Password} /> 
-                                <Route path = "/story" component = {Story} />
+                                <Route path = "/story"> <Story active = {this.state.stages[0]} /> </Route> 
+                                <Route path = "/password" > <Password succmet = {this.successfulmetric} active = {this.state.stages[1]}/> </Route>  
+                                <Route path = "/starting" > <Stageone active = {this.state.stages[2]}/> </Route>
                             </Switch>
                         </div> 
                         <div class = "col-md-3">
                             <div class = "timer"> 
                                 <h1> {this.state.minutes} : {this.state.seconds < 10 ? `0${this.state.seconds}` : this.state.seconds} </h1> 
                             </div>
-                            <Navigation />
+                            <Navigation/>
                         </div>
                         </BrowserRouter>
                     </div> 

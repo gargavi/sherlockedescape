@@ -20,12 +20,9 @@ const Navigation = () => {
                 </li> 
                 <li> 
                     <img src = {lock} className = "whiteback" style = {{height: "20px"}} />
-                    <NavLink activeStyle = {{color: 'white'}} className = "links" to="/contact"> STARTING POINT </NavLink>
+                    <NavLink activeStyle = {{color: 'white'}} className = "links" to="/stageone"> STARTING POINT </NavLink>
                 </li>
-                <li> 
-                    <img src = {lock} className = "whiteback" style = {{height: "20px"}} />
-                    <NavLink activeStyle = {{color: 'white'}} className = "links" to="/contact"> STARTING POINT 2 </NavLink>
-                </li>
+                
 
             </ul>
        </div> 
