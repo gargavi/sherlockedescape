@@ -1,0 +1,26 @@
+.killer { 
+    text-align: center;
+    margin-top: 25%;
+    font-family: 'Playfair display', serif;
+    
+}
+.killer label{ 
+    color: white;
+    display: block;
+    font-size: 50px;
+}
+.killer p { 
+    color: white;
+}
+
+.killer input { 
+    height: 40px;
+}
+
+.killer button { 
+    background-color: white;
+    color: rgb(85, 7, 7);
+    height: 50px;
+    font-size: 20px;
+    width: 100px;
+}

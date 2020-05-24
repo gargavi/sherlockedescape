@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,6 +9,12 @@ import Navigation from './components/Navigation';
 import Password from "./components/password";
 import Story from "./components/story";
 import Stageone from "./components/stageone";
+import Polygraph from "./components/polygraph";
+import Suspects from "./components/suspects";
+import Starting from "./components/starting";
+import Killer from "./components/killer";
+import Motive from "./components/motive";
+
 
 class App extends Component {
     constructor(props) { 
@@ -18,7 +24,32 @@ class App extends Component {
             minutes: 60, 
             seconds: 0,
             success: null,
-            stages: [false, false, false, false]
+            stages: [false, false, false, false, false, false, false, false], 
+            home: {
+                accepted: false
+            },
+            password: { 
+                who: "",
+                why: "",
+                how: "",
+                name: "",
+                tries: 12
+            }, 
+            stageone: { 
+                first: "", 
+                second: "", 
+                third: "",
+                fourth: "",
+                first_guess: "",
+                second_guess: "",
+                third_guess: "",
+                fourth_guess: "", 
+                solved: false
+            }, 
+            suspects: {
+                tries: 0,
+                correct: false
+            }
         }
     }
     enteredRoom = () => { 
@@ -30,8 +61,13 @@ class App extends Component {
         var temp_stages = this.state.stages.slice(); 
         temp_stages[0] = true;
         temp_stages[1] = true;
+        temp_stages[2] = true;
+        temp_stages[3] = true;
+        var new_home = Object.assign({}, this.state.home);
+        new_home.accepted = true;
         this.setState({
-            stages: temp_stages
+            stages: temp_stages,
+            home: new_home    
         })
         if (!this.state.stages[0]) { 
             this.myInterval = setInterval(() => {
@@ -56,44 +92,84 @@ class App extends Component {
         }
     }
 
+    setsuccess = (arranum) => { 
+        var temp_stages = this.state.stages.slice(); 
+        for (var index = 0; index < arranum.length; index ++ ) {
+            console.log(arranum[index]);
+            temp_stages[arranum[index]] = true;
+        }
+        console.log(temp_stages);
+        this.setState({ 
+            stages: temp_stages
+        })
+    }
     successfulmetric = (succ) => {
         this.setState({
             success: succ
         })
     }
-
+    validatekiller = (name) => { 
+        if (name === "arnav") { 
+            this.setsuccess([7]);
+        } else {
+            this.setState({
+                success: false
+            })
+        }
+    }
     componentWillUnmount() {
         clearInterval(this.myInterval)
     }
+    handlevalueChange = (stage, attribute, value) => { 
+        var temp_new = this.state[stage];
+        temp_new[attribute] = value;
+        var obj = {};
+        obj[stage] = temp_new
+        this.setState(obj);
+    }
+
+
     render() {
         if (!this.state.entered) { 
             return ( 
                 <Button className = "enterB" variant = "primary" onClick = {this.enteredRoom} > Dare to Enter..?</Button>
             )
-        }  else if (this.state.minutes == 0 && this.state.seconds == 0) { 
+        }  else if (this.state.minutes === 0 && this.state.seconds === 0) { 
             return (
-                <div class = "letter"> 
-                    <h3> Sorry! </h3>
-                    
-                    <p> You can easily try again by just hard refreshing the page (Ctrl-Shift-R on Windows
-                        or (Cmd-Shift-R on Mac).</p>
-                </div>
+                <div class = "container"> 
+                    <div class = "row topmargin"> 
+                        <div class = "letter"> 
+                            <h3> Sorry, you ran out of time! </h3>
+                            
+                            <p> P.S You can easily try again by just hard refreshing the page (Ctrl-Shift-R on Windows
+                                or (Cmd-Shift-R on Mac).</p>
+                        </div>
+                    </div> 
+                </div> 
             )   
-        } else if (this.state.success == true) { 
+        } else if (this.state.success === true) { 
             return (
-                <div class = "letter"> 
-                    <h3> Congrats! You have solved the puzzle! </h3> 
+                <div class = "container"> 
+                    <div class = "row topmargin"> 
+                        <div class = "letter"> 
+                            <h3> Congrats! You have solved the puzzle! </h3> 
 
-                    <p> We hope you guys enjoyed the puzzle! </p>
-                </div>
+                            <p> We hope you guys enjoyed the puzzle! </p>
+                        </div>
+                    </div> 
+                </div> 
             )    
-        }else if (this.state.success == false) { 
+        }else if (this.state.success === false) { 
             return (
-                <div class = "letter"> 
-                    <h3> Sorry! </h3>
-                    
-                    <p> You can easily try again by just hard refreshing the page (Ctrl-Shift-R on Windows
-                        or (Cmd-Shift-R on Mac).</p>
+                <div class = "container"> 
+                    <div class = "row topmargin"> 
+                        <div class = "letter"> 
+                            <h3> Sorry, you ran out of guesses! </h3>
+                            
+                            <p> P.S You can easily try again by just hard refreshing the page (Ctrl-Shift-R on Windows
+                                or (Cmd-Shift-R on Mac).</p>
+                        </div>
+                    </div> 
                 </div>
             )   
         }else {
@@ -103,17 +179,22 @@ class App extends Component {
                         <BrowserRouter>
                         <div class = "col-md-9"> 
                             <Switch>
-                                <Route path="/" exact> <Home onclick = {this.acceptChallenge} /> </Route>
-                                <Route path = "/story"> <Story active = {this.state.stages[0]} /> </Route> 
-                                <Route path = "/password" > <Password succmet = {this.successfulmetric} active = {this.state.stages[1]}/> </Route>  
-                                <Route path = "/starting" > <Stageone active = {this.state.stages[2]}/> </Route>
+                                <Route path="/" exact render ={(props) => <Home {...props} vals = {this.state.home} onclick = {this.acceptChallenge}/>}/> 
+                                <Route path = "/story" render = {(props) => <Story {...props} active = {this.state.stages[0]} />}/>
+                                <Route path = "/password" render = {(props) => <Password {...props} vals = {this.state.password} succmet = {this.successfulmetric} change = {this.handlevalueChange} active = {this.state.stages[1]}/>}/>     
+                                <Route path = "/starting" render = {(props) => <Starting {...props} active = {this.state.stages[2]}/>}/> 
+                                <Route path = "/todo" render = {(props) => <Stageone {...props} active = {this.state.stages[3]} solved = {this.setsuccess} vals = {this.state.stageone} change = {this.handlevalueChange}/>}/>
+                                <Route path = "/suspects" render = {(props) => <Suspects {...props} vals = {this.state.suspects} active = {this.state.stages[4]} solved = {this.setsuccess} change = {this.handlevalueChange}/>}/> 
+                                <Route path = "/polygraph" render = {(props) => <Polygraph {...props} active = {this.state.stages[5]} solved = {this.setsuccess}/>}/>
+                                <Route path = "/killer" render = {(props) => <Killer {...props} active = {this.state.stages[6]} validate = {this.validatekiller}/>} />
+                                <Route path = "/motive" render = {(props) => <Motive {...props} active = {this.state.stages[7]} solved = {this.setsuccess} />}/>
                             </Switch>
                         </div> 
                         <div class = "col-md-3">
                             <div class = "timer"> 
                                 <h1> {this.state.minutes} : {this.state.seconds < 10 ? `0${this.state.seconds}` : this.state.seconds} </h1> 
                             </div>
-                            <Navigation/>
+                            <Navigation active = {this.state.stages}/>
                         </div>
                         </BrowserRouter>
                     </div> 
@@ -123,5 +204,9 @@ class App extends Component {
         }
     }
 }
+
+
+
+
  
 export default App;

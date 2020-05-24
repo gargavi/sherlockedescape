@@ -1,27 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
+import "./css/home.css";
 
-
-class Home extends Component { 
-    constructor(props) { 
-        super(props)
-        this.state = { 
-            accepted: false
-        }
-        
-    }
-    acceptClick = () => { 
-        this.setState({ 
-            accepted: true
-        })
-        this.props.onclick();
-    }
-    render () { 
-        let button1; 
-        if (this.state.accepted){ 
+function Home(props){ 
+       let button1; 
+        if (props.vals.accepted){ 
             button1 = <p> <u> Accepted! </u> </p> 
         } else { 
-            button1 = <Button className = "accept" onClick = {this.acceptClick}> Accept the Case? </Button>;
+            button1 = <Button className = "accept" onClick = {props.onclick}> Accept the Case? </Button>;
         }
         return ( 
             <div class = "row"> 
@@ -41,7 +27,7 @@ class Home extends Component {
                     </div> 
                     <div class = "closing">
                         <p> Best of Luck, </p> 
-                        <p> A.G, A.Z </p>     
+                        <p> A.Z, A.G </p>     
                        
                     </div>  
                 </div> 
@@ -52,6 +38,5 @@ class Home extends Component {
         )
     }
 
-}
 
 export default Home;

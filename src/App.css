@@ -6,7 +6,6 @@
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 22px !important;
-    /* bring your own prefixes */
     transform: translate(-50%, -50%);
     height: 100px;
     width: 200px;
@@ -18,6 +17,14 @@
 .timer { 
     color:  rgba(160, 13, 13, 0.918);
     text-align: center;
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: rgba(160, 13, 13, 0.918);
+}
 
-
+.timer h1 { 
+    padding-top: 30%;
 }

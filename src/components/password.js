@@ -2,56 +2,20 @@ import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
 
 class Password extends Component { 
-    constructor(props) { 
-        super(props) 
-        this.state = { 
-            who_guess: " ",
-            why_guess: " ", 
-            how_guess: " ",
-            name: " ", 
-            correct: false,
-            tries: 12
-        }
-    }
-    handleWho = (event) => { 
-        var temp_who = event.target.value;
-        this.setState({ 
-            who_guess: temp_who
-        })
-    }
-    handleWhy = (event) => { 
-        var temp_why = event.target.value;
-        this.setState({ 
-            why_guess: temp_why
-        })
-    }
-    handleHow = (event) => { 
-        var temp_how = event.target.value;
-        this.setState({
-            how_guess: temp_how
-        })
-
-    }
-    handleName = (event) => { 
-        var temp_name = event.target.value; 
-        this.setState({
-            name: temp_name
-        })
+    
+    handleAnyChange = (event) => { 
+        this.props.change("password", event.target.name, event.target.value);
     }
 
     submitAnswer = () => { 
-        if (this.state.who_guess.toLocaleLowerCase() == "mooz" && this.state.how_guess.toLocaleLowerCase() == "poison" && this.state.why_guess.toLocaleLowerCase() == "revenge") { 
+        if (this.props.vals.who.toLocaleLowerCase() === "mooz" && this.props.vals.how.toLocaleLowerCase() === "poison" && this.props.vals.why.toLocaleLowerCase() === "revenge") { 
             this.props.succmet(true);
-            this.setState({ 
-                correct: true
-            })
+            
         } else {
-            if (this.state.tries == 1) { 
+            if (this.props.vals.tries === 1) { 
                 this.props.succmet(false);
             }
-            this.setState({ 
-                tries: this.state.tries - 1
-            })
+            this.props.change("password", "tries", this.props.vals.tries - 1);
         }
     }
     
@@ -65,22 +29,22 @@ class Password extends Component {
                     <h4> Who? </h4> 
                     <input 
                         name = "who"
-                        value = {this.state.who_guess}
-                        onChange = {this.handleWho}
+                        value = {this.props.vals.who}
+                        onChange = {this.handleAnyChange}
                     />
                     
                     <h4> Why? </h4> 
                     <input 
                         name = "why"
-                        value = {this.state.why_guess}
-                        onChange = {this.handleWhy}
+                        value = {this.props.vals.why}
+                        onChange = {this.handleAnyChange}
                     />
                     
                     <h4> How? </h4> 
                     <input 
                         name = "how"
-                        value = {this.state.how_guess}
-                        onChange = {this.handleHow}
+                        value = {this.props.vals.how}
+                        onChange = {this.handleAnyChange}
                     />
 
                     <div class = "closing"> 
@@ -88,12 +52,12 @@ class Password extends Component {
                         <input
                             id = "namesig"
                             name = "name"
-                            value = {this.state.name}
-                            onChange = {this.handleName}
+                            value = {this.props.vals.name}
+                            onChange = {this.handleAnyChange}
                         /> 
                     </div> 
                     <div id = "remaining"> 
-                        <p> You have {this.state.tries} tries remaining. </p> 
+                        <p> You have {this.props.vals.tries} tries remaining. </p> 
                         <Button type = "submit" id = "submitanswer" onClick = {this.submitAnswer}> Submit </Button>
 
                     </div> 

@@ -1,0 +1,82 @@
+
+/* Starting Stage CSS*/
+.autopsy { 
+    background-color:white;
+    transform: rotate(-3deg);
+    height: 700px;
+    font-family: "Playfair Display", serif;
+    background-repeat: no-repeat;
+    background-size: 550px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    box-shadow: 1px 5px 10px 2px rgb(235, 234, 234);
+  }
+  
+  .autopsy td { 
+    padding: 2%;
+    width: 40%;
+    padding-top: 6%;
+    font-size: 20px;
+    text-align: left;
+    border-style: none;
+  }
+  
+  .autopsy li { 
+    padding: none;
+    margin: none;
+  }
+  
+  .autopsy table { 
+    width: 80%;
+    text-align: center;
+  }
+  
+  .autopsy h3 { 
+    text-align: center; 
+    padding-top: 2%;
+    color: black;
+  }
+  .autopsy h5 { 
+    text-align: center;
+    margin-top: 1%;
+    padding-bottom: 4%;
+  }
+  
+  
+  .binder { 
+    background-color: black;
+    color: black;
+    height: 20px;
+    display: block;
+    width: 20px; 
+    border-radius: 50%;
+    margin: 1%;
+    
+  }
+  
+  .postit { 
+    background-color: rgb(251, 255, 0);
+    height: 250px;
+    width: 250px;
+    margin-bottom: 7%;
+    font-family: 'Bad Script', cursive;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: -3px 8px 10px 3px rgb(230, 231, 162); 
+  
+  }
+  
+  .postit li { 
+    list-style-type: none;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 3%;
+  }
+  
+  .postit p { 
+    padding: 6%;
+    font-size: 22px;
+  }
+  

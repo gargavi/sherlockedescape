@@ -1,0 +1,43 @@
+.email h5 { 
+    color: black;
+    text-align: left;
+
+}
+
+.inbox { 
+    border-style: solid;
+    border-color: white;
+    margin-bottom: 8%;
+    height: 1000px;
+    background-color: rgb(255, 251, 251);
+    padding: 1%;
+}
+.emailhead { 
+    margin-top: 1%;
+    background-color: rgb(85, 7, 7);
+}
+
+.email { 
+    font-family: 'Playfair Display', serif;
+    padding: 2%;
+}
+.emailtitle { 
+    color: white;
+    font-size: 20px;
+}
+
+.emailtitle:hover { 
+    color: white;
+}
+
+.email p {
+    margin-top: 3%;
+}
+.email .closing { 
+    font-family: 'Bad Script', cursive;
+}
+
+.email .closing p {
+    margin: 0;
+    padding-right:3%;
+}

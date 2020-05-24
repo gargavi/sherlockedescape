@@ -3,15 +3,16 @@ body {
   
 }
 
-
 .topmargin { 
   margin-top: 8%;
 }
 
-.letter h3 { 
+.letter h3 {
+  font-family: 'Dancing Script', cursive;
   font-weight: bolder;
   text-align: left;
   padding-top: 3%;
+  
   padding-bottom: 6%;
 }
 
@@ -24,17 +25,19 @@ body {
   padding: 5%;
   margin-left: 12%;
   text-align: justify;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: -2px 3px 15px 2px #ebdaa4;
   height: 750px;
-  font-family: 'Dancing Script', cursive;
-  width: 600px;
+  /*font-family: 'Dancing Script', cursive; */
+  /*font-family: 'Playfair Display', 'serif';*/
+  font-family: 'Bad Script',  cursive;
+  width: 650px;
   margin-bottom: 4%;
   transform: rotate(-3deg);
-  border-style: solid;
-  border-color: darkgray;
-  border-top-width: 4px;
-  border-left-width: 6px;
+  
 }
-
 
 .reject { 
   text-align: center;
@@ -48,6 +51,7 @@ body {
   font-style: italic;
 }
 .closing p {
+  font-family: 'Dancing Script', cursive;
   margin: 0;
   font-size: 22px;
   margin-top: 3%;
@@ -65,14 +69,6 @@ body {
   font-size: 20px;
   height: 60px;
   width: 100px;
-}
-/* Section for Home */ 
-#introletter { 
-  transform: rotate(-3deg);
-  border-style: solid;
-  border-color: grey;
-  border-top-width: 4px;
-  border-left-width: 6px;
 }
 
 #storyletter { 
@@ -96,19 +92,5 @@ body {
 .closing input { 
   width: 20% !important;
 }
-
-.buttonhold { 
-  text-align: center;
-  padding-top: 2%;
-  padding-bottom: 3%;
-  font-weight: bolder;
-}
-
-.accept { 
-  color: white !important;
-  background-color: black !important;
-}
-
-
 
 

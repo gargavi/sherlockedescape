@@ -1,29 +1,32 @@
 import React from 'react';
-import "./navigation.css";
+import "./css/navigation.css";
 import { NavLink } from 'react-router-dom';
-import lock from "./lock-icon.png";
-const Navigation = () => {
+import lock from "./photos/lock-icon.png";
+
+
+const Navigation = (props) => {
+    const names = ["STORY", "PASSWORD", "STARTING POINT", "TODO", "SUSPECTS", "EMAILS", "KILLER", "SEARCH"];
+    const links = ["/story", "/password", "/starting","/todo", "/suspects", "/polygraph", "/killer", "/motive"];
+    const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const pages = nums.map((num) => { 
+        if (props.active[num]) {  
+            return (<li> 
+                <img alt= "lock" src = {lock} className = "whiteback" style = {{height: "20px"}} />
+                <NavLink activeStyle = {{color: 'white'}} className = "links" to={links[num]}> {names[num]} </NavLink>
+            </li>
+            )
+        }
+    })
+
     return (
         <div className = "navigation"> 
             <ul> 
-                <li>
-                    <img src = {lock} className = "whiteback" style = {{height: "20px"}} />
-                    <NavLink activeStyle = {{color: 'white'}} className = "links" exact to="/"> HOME </NavLink>
-                </li>
-                <li>
-                    <img src = {lock} className = "whiteback" style = {{height: "20px"}} />
-                    <NavLink activeStyle = {{color: 'white'}} className = "links" exact to="/story"> STORY </NavLink>
-                </li>
                 <li> 
-                    <img src = {lock} className = "whiteback" style = {{height: "20px"}} />
-                    <NavLink activeStyle = {{color: 'white'}} className = "links" to="/password"> PASSWORD </NavLink>
-                </li> 
-                <li> 
-                    <img src = {lock} className = "whiteback" style = {{height: "20px"}} />
-                    <NavLink activeStyle = {{color: 'white'}} className = "links" to="/stageone"> STARTING POINT </NavLink>
+                    <img alt= "lock" src = {lock} className = "whiteback" style = {{height: "20px"}} />
+                    <NavLink exact activeStyle = {{color: 'white'}} className = "links" to= "/"> HOME </NavLink>
                 </li>
-                
-
+                {pages}
+               
             </ul>
        </div> 
     );
