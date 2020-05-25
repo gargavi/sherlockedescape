@@ -29,7 +29,7 @@ body {
   border-color: black;
   border-width: 1px;
   box-shadow: -2px 3px 15px 2px #ebdaa4;
-  height: 750px;
+  height: 800px;
   /*font-family: 'Dancing Script', cursive; */
   /*font-family: 'Playfair Display', 'serif';*/
   font-family: 'Bad Script',  cursive;
@@ -38,7 +38,9 @@ body {
   transform: rotate(-3deg);
   
 }
-
+.largest { 
+  margin-bottom: 10%;
+}
 .reject { 
   text-align: center;
   color: white;

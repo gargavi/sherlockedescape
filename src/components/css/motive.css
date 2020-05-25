@@ -46,8 +46,8 @@
 
 .screen .graphic2 {
     position: absolute;
-    top: 170px;
-    left: 500px;
+    top: 220px;
+    left: 300px;
     font-size: 20px;
     color: red;
 }
@@ -75,8 +75,8 @@
 
 .screen .graphic4 { 
     position: absolute;
-    top: 400px;
-    left: 700px;
+    top: 250px;
+    left: 650px;
 }
 
 .screen .graphic4 p { 
@@ -85,7 +85,84 @@
 }
 
 .screen .graphic4 .webpage { 
-    width: 100px !important;
+    width: 140px !important;
     height: 200px;
     font-size: 13px;
+    color: rgb(170, 111, 1);
+}
+
+.screen .graphic5 { 
+    position: absolute;
+    top: 500px;
+    left: 600px;
+}
+
+.screen .graphic5 .webpage { 
+    width: 200px !important;
+    height: 200px;
+    font-size: 14px;
+    color: rgb(189, 15, 189);
+}
+
+.graphic6 { 
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 470px;
+    top: 450px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.password { 
+    background-color: white;
+    width: 350px;
+    padding: 4%;
+    position: absolute;
+    top: 600px;
+    left: 100px;
+    text-align: center;
+}
+.password input { 
+    width: 18%;
+    background-color: white;
+    border-style: none;
+    border-width: 4px;
+    border-bottom-style: solid;
+    margin-right: 2%;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 8%;
+    color: black;
+}
+.password .first { 
+    border-bottom-color: black;
+}
+
+.password .second { 
+    border-bottom-color: green;
+}
+.password .third {
+    border-bottom-color: rgb(170, 111, 1);
+}
+.password .fourth {
+    border-bottom-color:red;
+}
+.password .fifth {
+    border-bottom-color:rgb(189, 15, 189);
+}
+
+.evidence { 
+    background-color: rgb(228, 220, 220);
+    margin: 4%;
+    padding: 4%;
+    font-size: 18px;
+}
+
+.evidence h2 { 
+    font-weight: bold;
+}
+.evidence h5 { 
+    text-align: center;
 }

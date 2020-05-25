@@ -6,7 +6,6 @@
     font-family: "Playfair", serif;
     background-size: 100%;
     padding-bottom: 10%;
-    margin-bottom: 10%;
     border-style: solid;
     border-color: black;
     border-width: 1px;
@@ -35,8 +34,10 @@
 
 .stageonetd input { 
     border-style: none;
-    width: 60%;
+    width: 40%;
     text-align: center;
+    margin-left: 4%;
+    margin-right: 4%;
 }
 
 h3 { 

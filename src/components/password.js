@@ -8,7 +8,7 @@ class Password extends Component {
     }
 
     submitAnswer = () => { 
-        if (this.props.vals.who.toLocaleLowerCase() === "mooz" && this.props.vals.how.toLocaleLowerCase() === "poison" && this.props.vals.why.toLocaleLowerCase() === "revenge") { 
+        if (this.props.vals.who.toLocaleLowerCase().trim() === "arnav" && this.props.vals.how.toLocaleLowerCase().trim() === "11" && this.props.vals.why.toLocaleLowerCase().trim() === "money") { 
             this.props.succmet(true);
             
         } else {
@@ -29,6 +29,7 @@ class Password extends Component {
                     <h4> Who? </h4> 
                     <input 
                         name = "who"
+                        type = "text"
                         value = {this.props.vals.who}
                         onChange = {this.handleAnyChange}
                     />
@@ -36,6 +37,7 @@ class Password extends Component {
                     <h4> Why? </h4> 
                     <input 
                         name = "why"
+                        type = "text"
                         value = {this.props.vals.why}
                         onChange = {this.handleAnyChange}
                     />
@@ -43,6 +45,7 @@ class Password extends Component {
                     <h4> How? </h4> 
                     <input 
                         name = "how"
+                        type = "text"
                         value = {this.props.vals.how}
                         onChange = {this.handleAnyChange}
                     />
@@ -52,6 +55,7 @@ class Password extends Component {
                         <input
                             id = "namesig"
                             name = "name"
+                            type = "text"
                             value = {this.props.vals.name}
                             onChange = {this.handleAnyChange}
                         /> 

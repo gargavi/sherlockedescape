@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./css/stageone.css";
 import Background from "./photos/notepad.png";
 import Button from 'react-bootstrap/Button';
+import Hint from './hints';
 
 class Stageone extends Component { 
     constructor(props) { 
@@ -10,26 +11,22 @@ class Stageone extends Component {
             first_guess: "",
             second_guess: "",
             third_guess: "",
-            fourth_guess: "", 
+            fourth_guess: "",
             solved: false
         }
     }
     handleSubmit = () => { 
-        if (this.state.first_guess.toLowerCase() === "arnav" 
-        && this.state.second_guess.toLowerCase() === "sam" 
-        && this.state.third_guess.toLowerCase() === "ibis"
-        && this.state.fourth_guess.toLowerCase() === "sheila"){
-            this.setState({ 
-                solved: true
-            })
+        if (this.props.vals.first_guess.toLowerCase().trim() === "arnav" 
+        && this.props.vals.second_guess.toLowerCase().trim() === "sam" 
+        && this.props.vals.third_guess.toLowerCase().trim() === "ibis"
+        && this.props.vals.fourth_guess.toLowerCase().trim() === "sheila"){
+            this.props.change("stageone", "solved", true);
             this.props.solved([4]);
         } else { 
-            this.setState({ 
-                first_guess: "",
-                second_guess: "",
-                third_guess: "",
-                fourth_guess: ""
-            })
+            this.props.change("stageone", "first_guess", "");
+            this.props.change("stageone", "second_guess", "");
+            this.props.change("stageone", "third_guess", "");
+            this.props.change("stageone", "fourth_guess", "");
         }
     }
 
@@ -39,7 +36,7 @@ class Stageone extends Component {
 
     render() {
         let button1; 
-        if (this.state.solved) { 
+        if (this.props.vals.solved) { 
             button1 = <h5 style = {{marginTop: "3%"}}> Solved! </h5>
         }else {
             button1 = <Button id = "submitsuspects" onClick = {this.handleSubmit}> Submit </Button>
@@ -51,8 +48,26 @@ class Stageone extends Component {
                 </div> 
             )
         } else {
-
+            const hinters = [
+                {
+                    num: "0", 
+                    title: "Hint 1", 
+                    body: "Buy Milk -> Cwb Qnrr"}, 
+                {
+                    num: "1", 
+                    title: "Full Cipher", 
+                    body: "You translate every letter to x numbers in the alphabet after it where x is its position. (u is the second letter in Buy so you move it two spaces to w, y is the third letter so its becomes A"},
+                {
+                    num: "2", 
+                    title: "Full Decryption",
+                    body: "Lunch with Arnav, Call Sam & Ibis Back, Respond to Sheila, Pick up meds"
+                }
+            ]
+            const hints = <Hint
+                values = {hinters}
+            /> 
             return (
+                    <div className = "largest"> 
                     <div class = "todo" style = {{backgroundImage: `url(${Background})`}}> 
                         <h3>  To-Do List </h3> 
                         <table className = "todotable">
@@ -67,13 +82,11 @@ class Stageone extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td className = "stageonetd"> Cwb Qnrr</td> 
-                                    <td className = "stageonetd" style = {{textDecoration: 'none'}}> Buy Milk </td> 
-                                </tr>
+                                
                                 <tr> 
                                     <td className = "stageonetd"> Mwqgm c/ Hzwkg </td> 
                                     <td className = "stageonetd"> 
+                                    <label>Lunch  </label>
                                     <input
                                         name = "first"
                                         value = {this.props.vals.first}
@@ -88,7 +101,8 @@ class Stageone extends Component {
                                         name = "second"
                                         value = {this.props.vals.second}
                                         onChange = {this.handleAnyChange}
-                                    />     
+                                    />
+                                    <label> back  </label>
                                     </td> 
                                 </tr>
                                 <tr> 
@@ -117,27 +131,31 @@ class Stageone extends Component {
                             <h5> Suspects? (in order) </h5>
                             <input 
                             name = "first_guess"
-                            value = {this.state.first_guess}
-                            onChange = {(event) => {this.setState({first_guess: event.target.value})}}
+                            value = {this.props.vals.first_guess}
+                            onChange = {this.handleAnyChange}
                             /> 
                             <input 
                                 name = "second_guess"
-                                value = {this.state.second_guess}
-                                onChange = {(event) => {this.setState({second_guess: event.target.value})}}
+                                value = {this.props.vals.second_guess}
+                                onChange = {this.handleAnyChange}
                             /> 
                             <input
                                 name = "third_guess"
-                                value = {this.state.third_guess}
-                                onChange = {(event) => {this.setState({third_guess: event.target.value})}}
+                                value = {this.props.vals.third_guess}
+                                onChange = {this.handleAnyChange}
                             />
                             <input
                                 name = "fourth_guess"
-                                value = {this.state.fourth_guess}
-                                onChange = {(event) => {this.setState({fourth_guess: event.target.value})}}
+                                value = {this.props.vals.fourth_guess}
+                                onChange = {this.handleAnyChange}
                                 />
                             {button1}
                         </div> 
                     </div> 
+                    
+                        {hints}
+                    
+                    </div>
                 )
         }
     }

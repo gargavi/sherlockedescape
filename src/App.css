@@ -17,14 +17,17 @@
 .timer { 
     color:  rgba(160, 13, 13, 0.918);
     text-align: center;
-    background-color: white;
+    
+    /* background-color: white;
     height: 200px;
     width: 200px;
     border-radius: 50%;
     border-style: solid;
     border-color: rgba(160, 13, 13, 0.918);
+    */
 }
 
 .timer h1 { 
     padding-top: 30%;
+    font-size: 60px !important;
 }

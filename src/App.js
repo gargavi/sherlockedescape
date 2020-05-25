@@ -14,7 +14,14 @@ import Suspects from "./components/suspects";
 import Starting from "./components/starting";
 import Killer from "./components/killer";
 import Motive from "./components/motive";
+import How from "./components/how";
 
+
+if (!String.prototype.trim) {
+    String.prototype.trim = function () {
+      return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+    };
+  }
 
 class App extends Component {
     constructor(props) { 
@@ -24,7 +31,7 @@ class App extends Component {
             minutes: 60, 
             seconds: 0,
             success: null,
-            stages: [false, false, false, false, false, false, false, false], 
+            stages: [false, false, false, false, false, false, false, false, false], 
             home: {
                 accepted: false
             },
@@ -48,7 +55,13 @@ class App extends Component {
             }, 
             suspects: {
                 tries: 0,
-                correct: false
+                correct: false,
+                first: "",
+                second: ""
+            },
+            motive: { 
+                correct: false,
+                guesses: ["", "", "", "", ""]
             }
         }
     }
@@ -95,10 +108,8 @@ class App extends Component {
     setsuccess = (arranum) => { 
         var temp_stages = this.state.stages.slice(); 
         for (var index = 0; index < arranum.length; index ++ ) {
-            console.log(arranum[index]);
             temp_stages[arranum[index]] = true;
         }
-        console.log(temp_stages);
         this.setState({ 
             stages: temp_stages
         })
@@ -107,9 +118,10 @@ class App extends Component {
         this.setState({
             success: succ
         })
+        clearInterval(this.myInterval);
     }
     validatekiller = (name) => { 
-        if (name === "arnav") { 
+        if (name.toLowerCase().trim() === "arnav") { 
             this.setsuccess([7]);
         } else {
             this.setState({
@@ -155,6 +167,8 @@ class App extends Component {
                             <h3> Congrats! You have solved the puzzle! </h3> 
 
                             <p> We hope you guys enjoyed the puzzle! </p>
+
+                            <p> It took you {60 - this.state.minutes - 1} minutes and {60 - this.state.seconds}  seconds. </p>
                         </div>
                     </div> 
                 </div> 
@@ -187,7 +201,8 @@ class App extends Component {
                                 <Route path = "/suspects" render = {(props) => <Suspects {...props} vals = {this.state.suspects} active = {this.state.stages[4]} solved = {this.setsuccess} change = {this.handlevalueChange}/>}/> 
                                 <Route path = "/polygraph" render = {(props) => <Polygraph {...props} active = {this.state.stages[5]} solved = {this.setsuccess}/>}/>
                                 <Route path = "/killer" render = {(props) => <Killer {...props} active = {this.state.stages[6]} validate = {this.validatekiller}/>} />
-                                <Route path = "/motive" render = {(props) => <Motive {...props} active = {this.state.stages[7]} solved = {this.setsuccess} />}/>
+                                <Route path = "/motive" render = {(props) => <Motive {...props} active = {this.state.stages[7]} solved = {this.setsuccess} vals = {this.state.motive} change = {this.handlevalueChange} />}/>
+                                <Route path = "/how" render = {(props) => <How {...props} active = {this.state.stages[8]} />} />
                             </Switch>
                         </div> 
                         <div class = "col-md-3">

@@ -40,6 +40,10 @@
     margin-bottom: 10% !important;
     
   }
+
+  .webtitle { 
+    font-weight: bold;
+  }
   .red { 
     background-color: #DE0B0B;
     left: 5%;

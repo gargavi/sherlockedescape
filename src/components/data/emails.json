@@ -40,7 +40,7 @@
             "Email me back when you can."    
         ], 
         "closer": ["From,", "Ibis"],
-        "number": 3
+        "number": 4
     },
     { 
         "title": "Group Lunch",
@@ -51,7 +51,7 @@
             "I was just texting wondering if you were planning on coming to the dinner that me and Arnav are having later. He mentioned inviting you so I thought we could find a central restaurant maybe"
         ], 
         "closer": ["Best regards,", "Andrew"],
-        "number": 3
+        "number": 5
     },
     { 
         "title": "Re: Catching Up! ",
@@ -62,7 +62,7 @@
         " If you want to, I know this great place in the South part of the city that would be great for us to grab a quick bite at. You're more than welcome to come by the house and eat with us, you're practically family!",
         "Text me, I'm not checking emails that often anymore"], 
         "closer": ["Andrew", "Ph.D"],
-        "number": 5
+        "number": 6
     }, 
 
     { 

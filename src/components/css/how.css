@@ -1,0 +1,52 @@
+.how { 
+    text-align: center;
+    padding-top: 1%;
+    background-color: rgb(240, 231, 182);
+    margin-bottom: 10%;
+    height: 900px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: -3px 4px 15px 2px #ebdaa4;
+}
+
+.how .finale { 
+    margin: 2%;
+    padding: 1%;
+    font-weight: bold;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+.healthprob { 
+    width: 46%;
+    padding: 1%;
+    margin: 2%;
+    border-style: solid;
+    border-color: black;
+    display: inline-block;
+    vertical-align: top;
+} 
+.healthprob h5 { 
+    color: black;
+}
+.healthprob li { 
+    list-style-type: none;
+    font-size: 18px;
+}
+.descriptions { 
+    margin: 2%;
+    padding: 4%;
+    padding-top: 2%;
+    border-style: solid;
+    border-color: black;
+}
+
+.descriptions h5 { 
+    padding-bottom: 1%;
+    font-weight: bold;
+}
+.descriptions li { 
+    margin-top: .75%;
+}

@@ -3,7 +3,10 @@ import "./css/webpage.css";
 
 function Webpage(props) {
     const paras = props.paragraphs.map(para => <p> {para} </p>);
-
+    let title;
+    if (props.title) { 
+        title = <div class = "webtitle"> {props.title} </div>
+    }
     return (
         <div class = "container">
             <div class = "row"> 
@@ -16,6 +19,7 @@ function Webpage(props) {
                         </div>
                     </div> 
                     <div class = "webcontent"> 
+                        {title}
                         {paras}
                     </div>
                 </div> 

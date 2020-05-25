@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Accordion, Card, Button} from 'react-bootstrap';
 import emails from "./data/emails.json";
 import "./css/polygraph.css";
+import Hint from "./hints";
+
 class Polygraph extends Component { 
     constructor(props) { 
         super(props) 
@@ -34,9 +36,24 @@ class Polygraph extends Component {
     }
     render() {
         const email_web = emails.map(email => this.renderWeb(email));
-        if (this.props.active) { 
+        if (this.props.active) {
+            const hinters = [
+                {
+                    num: "0", 
+                    title: "Hint 1", 
+                    body: "Check for inconstencies! "}, 
+                {
+                    num: "1", 
+                    title: "Hint 2", 
+                    body: "Check for inconstencies in the alibi! "}, 
+                
+            ]
+            const hints = <Hint
+                values = {hinters}
+            />  
             return ( 
-                <div class = "inbox"> 
+                <div class = "largest">
+                    <div class = "inbox"> 
                 <Accordion defaultActiveKey="1">
                     <Card> 
                         <Card.Header style = {{backgroundColor: "white", borderStyle: "solid", borderColor: "black", borderWidth: "3px"}}>
@@ -46,6 +63,8 @@ class Polygraph extends Component {
                     {email_web}
                 </Accordion>
                 </div> 
+                    {hints}
+                </div>
             )
         } else { 
             return ( 

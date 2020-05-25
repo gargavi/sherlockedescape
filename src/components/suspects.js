@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Nav, Row, Col, Tab} from 'react-bootstrap';
 import './css/suspects.css';
-
+import Hint from "./hints";
 
 class Suspects extends Component { 
     constructor(props) { 
@@ -13,7 +13,7 @@ class Suspects extends Component {
     }
     
     handleClick = () =>  { 
-        if ((this.state.first.toLowerCase() === "arnav" && this.state.second.toLowerCase() === "ibis") ||(this.state.first.toLowerCase() === "ibis" && this.state.second.toLowerCase() === "arnav") ){
+        if ((this.props.vals.first.toLowerCase().trim() === "arnav" && this.props.vals.second.toLowerCase().trim() === "ibis") ||(this.props.vals.first.toLowerCase().trim() === "ibis" && this.props.vals.second.toLowerCase().trim() === "arnav") ){
             this.props.solved([5, 6]);
             
             this.props.change("suspects", "correct", true);
@@ -52,11 +52,38 @@ class Suspects extends Component {
         if (this.props.vals.correct) { 
             button1 = <h5>  Solved! </h5>;
         } else { 
-            button1 = <Button className="suspectanswerbutt" onClick = {this.handleClick}>  Submit? </Button>;
+            button1 =
+            <div> 
+                <Button className="suspectanswerbutt" onClick = {this.handleClick}>  Submit? </Button>
+                <h5> You've taken {this.props.vals.tries} tries</h5>
+            </div> ;
         }
 
         if (this.props.active ) { 
+            const hinters = [
+                {
+                    num: "0", 
+                    title: "Hint 1", 
+                    body: "https://www.brainzilla.com/logic/zebra/einsteins-riddle/"}, 
+                {
+                    num: "1", 
+                    title: "Additional Attribute ", 
+                    body: "Arnav works at Zoom"},
+                {
+                    num: "2", 
+                    title: "Additional Attribute ", 
+                    body: "Ibis wears Dress pants"},
+                {
+                    num: "3", 
+                    title: "Full Solution",
+                    body: "Arnav: Zoom, sweats, Sam: Amazon, Pajamas, Ibis: Google, Dress, Sheila: Goldman, Plaid, Paul: Gibson, Striped "
+                }
+            ]
+            const hints = <Hint
+                values = {hinters}
+            /> 
             return ( 
+                <div className = "largest">
                 <div class = "suspectinfo">
                     <h4> Suspect Information </h4>  
                     <Tab.Container className = "container" defaultActiveKey="general">
@@ -66,20 +93,21 @@ class Suspects extends Component {
                         <Nav.Item className = "suspectitem">
                             <Nav.Link eventKey="general" className = "suspectlink"> General Info </Nav.Link>
                         </Nav.Item>
-                        <Nav.Item className = "suspectitem">
-                            <Nav.Link eventKey="first" className = "suspectlink"> Arnav </Nav.Link>
-                        </Nav.Item>
+                        
                         <Nav.Item className = "suspectitem">
                             <Nav.Link eventKey="fourth" className = "suspectlink"> Sheila </Nav.Link>
                         </Nav.Item>
                         <Nav.Item className = "suspectitem">
-                            <Nav.Link eventKey="fifth" className = "suspectlink"> Paul </Nav.Link>
+                            <Nav.Link eventKey="third" className = "suspectlink"> Ibis </Nav.Link>
                         </Nav.Item>
                         <Nav.Item className = "suspectitem">
                             <Nav.Link eventKey="second" className = "suspectlink"> Samantha </Nav.Link>
                         </Nav.Item>
                         <Nav.Item className = "suspectitem">
-                            <Nav.Link eventKey="third" className = "suspectlink"> Ibis </Nav.Link>
+                            <Nav.Link eventKey="fifth" className = "suspectlink"> Paul </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item className = "suspectitem">
+                            <Nav.Link eventKey="first" className = "suspectlink"> Arnav </Nav.Link>
                         </Nav.Item>
                         <Nav.Item className = "suspectitem">
                             <Nav.Link eventKey="chart" className = "suspectlink"> Chart </Nav.Link>
@@ -135,10 +163,11 @@ class Suspects extends Component {
                                 <div class = "generalinfo"> 
                                     <p> 
                                         Unfortunately, due to our system errors, we were unable to get all 
-                                        the information from the suspects you identified. What information we did 
-                                        manage to get is displayed In the tabs above. We also were able to get information 
-                                        from other sources about where some of these people worked. Finally, we know that they each work at one of the 5 companies:
-                                        <b> Goldman, Gibson Law, Google, Amazon or Zoom, </b> which each have separate mandatory dresss codes.
+                                        the information from the suspects you identified. We also pulled some information on Paul, their neighbor 
+                                        who Emily said has just recently been talking to Andrew. What information we did 
+                                        manage to get is displayed in the tabs above. We also were able to get information 
+                                        from other sources about where some of these people worked shown below. Finally, we know that they each work at one of the 5 companies:
+                                        <b> Goldman, Gibson Law, Google, Amazon or Zoom, </b> which each have separate mandatory dress codes.
                                     </p>
                                     <li> Sheila doesn't work at Amazon. </li>
                                     <li> The person who works at Amazon wears pajamas.</li>
@@ -181,9 +210,9 @@ class Suspects extends Component {
                         </Tab.Pane>
                         <Tab.Pane eventKey = "answer">
                             <div className = "putanswer"> 
-                                <label> Suspect 1: </label>  <input type = "text" onBlur = {(event) => {this.setState({first: event.target.value})}}/> 
+                                <label> Suspect 1: </label>  <input type = "text" name = "first" value = {this.props.vals.first} onChange = {(event) => {this.props.change("suspects", "first", event.target.value)}}/> 
                                 
-                                <label> Suspect 2: </label>  <input type = "text" onBlur = {(event) => {this.setState({second: event.target.value})}} /> 
+                                <label> Suspect 2: </label>  <input type = "text" name = "second" value = {this.props.vals.second} onChange = {(event) => {this.props.change("suspects", "second", event.target.value)}} /> 
                                 <div> 
                                 {button1}
                                 </div> 
@@ -194,6 +223,8 @@ class Suspects extends Component {
                     </Row>
                 </Tab.Container>
             </div> 
+                {hints}
+                </div>
             )
         } else { 
             return (

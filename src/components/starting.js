@@ -10,7 +10,7 @@ const Starting = (props) => {
                 <Col md = {8}> 
                     <div class = "autopsy" style = {{backgroundImage: `url(${Report})`}}> 
                         <h3> Office of the Medical Examiner </h3> 
-                        <h5> County of blueface, Thoughtiana</h5>
+                        <h5> County of Fauci, CA </h5>
                         <Row> 
                             <table> 
                             <tbody> 
@@ -44,11 +44,9 @@ const Starting = (props) => {
                 </Col> 
                 <Col md = {4}> 
                     <div className = "postit"> 
-                        <li> Theodore Roosevelt </li> 
-                        <li> Julius Caesar </li> 
-                        <li> Leonard Euler </li>
-                        <li> Nelson Mandela </li>
-                        <li> Leonardo Bonacci </li>  
+                        <p> 
+                            clues can be anywhere, even on different pages! 
+                        </p>
                     </div>
                     <div className = "postit"> 
                         <p> The wife said that she saw someone with either 

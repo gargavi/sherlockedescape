@@ -1,0 +1,17 @@
+.hints { 
+    width: 40%;
+    margin-left:30%;
+    margin-top: 4%;
+}
+
+.hints .card { 
+    
+    background-color:white;
+    color: rgb(85, 7, 7);
+    margin-top: 1%;
+}
+
+.hinttitle { 
+    color: rgb(85, 7, 7);
+    font-weight: bold;
+}
