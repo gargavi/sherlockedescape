@@ -21,7 +21,7 @@ class Stageone extends Component {
         && this.props.vals.third_guess.toLowerCase().trim() === "ibis"
         && this.props.vals.fourth_guess.toLowerCase().trim() === "sheila"){
             this.props.change("stageone", "solved", true);
-            this.props.solved([4]);
+            this.props.solved([3]);
         } else { 
             this.props.change("stageone", "first_guess", "");
             this.props.change("stageone", "second_guess", "");
@@ -55,16 +55,18 @@ class Stageone extends Component {
                     body: "Buy Milk -> Cwb Qnrr"}, 
                 {
                     num: "1", 
-                    title: "Full Cipher", 
+                    title: "Hint 2: Full Cipher", 
                     body: "You translate every letter to x numbers in the alphabet after it where x is its position. (u is the second letter in Buy so you move it two spaces to w, y is the third letter so its becomes A"},
                 {
                     num: "2", 
-                    title: "Full Decryption",
+                    title: "Final Hint: Full Decryption",
                     body: "Lunch with Arnav, Call Sam & Ibis Back, Respond to Sheila, Pick up meds"
                 }
-            ]
+            ].slice(0, this.props.vals.hints)
             const hints = <Hint
                 values = {hinters}
+                num = {this.props.hints}
+                click = {() => {this.props.change("stageone", "hints", this.props.vals.hints + 1); this.props.change("hints", "hints", this.props.hints - 1)}}
             /> 
             return (
                     <div className = "largest"> 
@@ -89,6 +91,7 @@ class Stageone extends Component {
                                     <label>Lunch  </label>
                                     <input
                                         name = "first"
+                                        type = "text"
                                         value = {this.props.vals.first}
                                         onChange = {this.handleAnyChange}
                                     />     
@@ -99,6 +102,8 @@ class Stageone extends Component {
                                     <td className = "stageonetd"> 
                                     <input
                                         name = "second"
+                                        type = "text"
+                                        className = "longerbox"
                                         value = {this.props.vals.second}
                                         onChange = {this.handleAnyChange}
                                     />
@@ -106,10 +111,11 @@ class Stageone extends Component {
                                     </td> 
                                 </tr>
                                 <tr> 
-                                    <td className = "stageonetd"> Sgvtttk bx Ssqvzp </td> 
+                                    <td className = "stageonetd"> Sgvtttk bx Csqvzp </td> 
                                     <td className = "stageonetd"> 
                                     <input
                                         name = "third"
+                                        type = "text"
                                         value = {this.props.vals.third}
                                         onChange = {this.handleAnyChange}
                                     />     
@@ -120,6 +126,7 @@ class Stageone extends Component {
                                     <td className = "stageonetd"> 
                                     <input
                                         name = "fourth"
+                                        type = "text"
                                         value = {this.props.vals.fourth}
                                         onChange = {this.handleAnyChange}
                                     />     
@@ -131,21 +138,25 @@ class Stageone extends Component {
                             <h5> Suspects? (in order) </h5>
                             <input 
                             name = "first_guess"
+                            type = "text"
                             value = {this.props.vals.first_guess}
                             onChange = {this.handleAnyChange}
                             /> 
                             <input 
                                 name = "second_guess"
+                                type = "text"
                                 value = {this.props.vals.second_guess}
                                 onChange = {this.handleAnyChange}
                             /> 
                             <input
                                 name = "third_guess"
+                                type = "text"
                                 value = {this.props.vals.third_guess}
                                 onChange = {this.handleAnyChange}
                             />
                             <input
                                 name = "fourth_guess"
+                                type = "text"
                                 value = {this.props.vals.fourth_guess}
                                 onChange = {this.handleAnyChange}
                                 />

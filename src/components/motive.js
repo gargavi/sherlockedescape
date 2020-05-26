@@ -27,7 +27,7 @@ class Motive extends Component {
         }
         if (correct) {
             this.props.change("motive", "correct", true);
-            this.props.solved([8]);
+            this.props.solved([7, 8]);
         }
     }
 
@@ -61,37 +61,44 @@ class Motive extends Component {
                 )
             } else { 
                 const hinters = [
+                    {   num: "-1", 
+                        title: "Freebie: Try",
+                        body: "Each webpage gives a SINGLE WORD either by a pattern it demonstrates or by completing the ? or _ "
+                    },
                     {
                         num: "0", 
-                        title: "Black Text", 
+                        title: "Hint: Black Text", 
                         body: "Calendar"}, 
                     {
                         num: "1", 
-                        title: "Red Text", 
+                        title: "Hint: Red Text", 
                         body: "Look at the instructions once again."},
                     {
                         num: "2", 
-                        title: "Gold Text",
-                        body: "Look at the stating letters. See anything that looks familiar?" 
+                        title: "Hint: Gold Text",
+                        body: "Look at the starting letters. See anything that looks familiar?" 
                     }, 
                     {
                         num: "3", 
-                        title: "Gold Text pt.2",
+                        title: "Hint: Gold Text pt.2",
                         body: "U.S.A, U.S.A, U.S.A" 
                     }, 
                     {
                         num: "4", 
-                        title: "Purple Text",
+                        title: "Hint: Purple Text",
                         body: "periodic" 
                     }, 
                     {
                         num: "5", 
-                        title: "General ",
-                        body: "There are only 5 letters but 6 graphics? Maybe one of them doesn't give you a clue but IS a clue.." 
+                        title: "Final Hint: Everything ",
+                        body: "Black: Months, Green: Three, Gold: Presidents, Green: Fibonaaci, Purple: See You; middle gives your the roman numerals of what letter to use from each word in corresponding color piece. " 
                     }
-                ]
+                ].slice(0, this.props.vals.hints)
                 const hints = <Hint
                     values = {hinters}
+                    num = {this.props.hints}
+                    click = {() => {this.props.change("motive", "hints", this.props.vals.hints + 1); this.props.change("hints", "hints", this.props.hints - 1)}}
+        
                 /> 
                 return ( 
                     <div class = "largest">
@@ -116,7 +123,7 @@ class Motive extends Component {
                             </div> 
                             <div class = "graphic3"> 
                                 <Webpage 
-                                    paragraphs = {[ "0, 1, 1, 2, 3, 5, 8, 13 ..."]}
+                                    paragraphs = {[ "What do you own but other's use more than you?", "0, 1, 1, 2, 3, 5, 8, 13 ..."]}
                                 /> 
                             </div> 
                             <div class = "graphic4"> 

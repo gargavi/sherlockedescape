@@ -19,7 +19,7 @@ class Story extends Component {
                         <p> We got a call, late last night, that a prominent researcher for an emerging vaccine 
                             was found at this desk dead. This virus has caused the entire world to a standstill and normally, Scotland Yard wouldn't have been
                             brought into such a case but the government is anxious to solve this 
-                            case quickly and quietly. He was found by his wife, Emily, who recently tested positive for the viral virus, 
+                            case quickly and quietly. He was found by his wife, Karen , who recently tested positive for the viral virus, 
                             and has been remaining isolated in her bedroom for the past 8 days. She came to check in for dinner
                             and found her husband at his desk. 
                             </p> 
@@ -29,7 +29,7 @@ class Story extends Component {
                             remotely. We were able to grab information off of his computer, his social media, some details 
                             about his company, and some other miscellaenous stuff. We're hoping that you can help us piece it 
                             all together. You only have an hour to do this before the company has to give a press conference, 
-                            and we need it wrapped up by then. <b> You can find a return letter on the next page. </b> </p> 
+                            and we need it wrapped up by then.</p> 
                         <div class = "closing"> 
                             <p> Sincerely, </p> 
                             <p> Scotland Yard</p>

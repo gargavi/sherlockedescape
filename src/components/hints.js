@@ -16,11 +16,19 @@ function Hint(props){
                 <Card.Body> {elem.body} </Card.Body>
                 </Accordion.Collapse>
              </Card>
+            
         )
     })
+    let button1;
+    if (props.num > 0) { 
+        button1 = <Button className = "adder" onClick = {props.click}> Add Hints  </Button> ;
+    } else { 
+        button1 = <h1> No hints left </h1> 
+    }
 
     return (
         <div class = "hints">
+        {button1}
         <Accordion> 
             {hinters}
         </Accordion>

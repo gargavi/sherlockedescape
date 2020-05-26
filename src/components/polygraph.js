@@ -44,12 +44,14 @@ class Polygraph extends Component {
                     body: "Check for inconstencies! "}, 
                 {
                     num: "1", 
-                    title: "Hint 2", 
-                    body: "Check for inconstencies in the alibi! "}, 
+                    title: "Final Hint 2", 
+                    body: "Check for inconstencies in the alibi against emails! "}, 
                 
-            ]
+            ].slice(0, this.props.vals.hints)
             const hints = <Hint
                 values = {hinters}
+                num = {this.props.hints}
+                click = {() => {this.props.change("emails", "hints", this.props.vals.hints + 1); this.props.change("hints", "hints", this.props.hints - 1)}}
             />  
             return ( 
                 <div class = "largest">

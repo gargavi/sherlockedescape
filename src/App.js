@@ -15,7 +15,7 @@ import Starting from "./components/starting";
 import Killer from "./components/killer";
 import Motive from "./components/motive";
 import How from "./components/how";
-
+import Congrats from "./components/congrats";
 
 if (!String.prototype.trim) {
     String.prototype.trim = function () {
@@ -40,7 +40,7 @@ class App extends Component {
                 why: "",
                 how: "",
                 name: "",
-                tries: 12
+                tries: 5
             }, 
             stageone: { 
                 first: "", 
@@ -51,31 +51,44 @@ class App extends Component {
                 second_guess: "",
                 third_guess: "",
                 fourth_guess: "", 
-                solved: false
+                solved: false,
+                hints: 0
             }, 
             suspects: {
                 tries: 0,
                 correct: false,
                 first: "",
-                second: ""
+                second: "",
+                hints: 0
+            },
+            emails: { 
+                hints: 0
             },
             motive: { 
                 correct: false,
-                guesses: ["", "", "", "", ""]
+                guesses: ["", "", "", "", ""],
+                hints: 1
+            }, 
+            hints: { 
+                hints: 4, 
+            }, 
+            how: { 
+                hints: 0
             }
+            
         }
     }
-    enteredRoom = () => { 
+    enteredRoom = (num) => {
         this.setState({ 
             entered: true
         })
+        this.handlevalueChange("hints", "hints", num);
     }
     acceptChallenge = () => {
         var temp_stages = this.state.stages.slice(); 
         temp_stages[0] = true;
         temp_stages[1] = true;
         temp_stages[2] = true;
-        temp_stages[3] = true;
         var new_home = Object.assign({}, this.state.home);
         new_home.accepted = true;
         this.setState({
@@ -109,6 +122,9 @@ class App extends Component {
         var temp_stages = this.state.stages.slice(); 
         for (var index = 0; index < arranum.length; index ++ ) {
             temp_stages[arranum[index]] = true;
+            if (arranum[index] === 9) { 
+                clearInterval(this.myInterval);
+            }
         }
         this.setState({ 
             stages: temp_stages
@@ -122,7 +138,7 @@ class App extends Component {
     }
     validatekiller = (name) => { 
         if (name.toLowerCase().trim() === "arnav") { 
-            this.setsuccess([7]);
+            this.setsuccess([6]);
         } else {
             this.setState({
                 success: false
@@ -144,43 +160,40 @@ class App extends Component {
     render() {
         if (!this.state.entered) { 
             return ( 
-                <Button className = "enterB" variant = "primary" onClick = {this.enteredRoom} > Dare to Enter..?</Button>
-            )
+                <div className = "introb"> 
+                    <h1> Ready to Play? </h1>
+                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(0)}} > Hardest </Button>
+                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(4)}} > Hard </Button>
+                    <Button  variant = "primary" onClick = {() => this.enteredRoom(7)} > Medium </Button>
+                    <Button  variant = "primary" onClick = {() => this.enteredRoom(10)} > Easy </Button>
+                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(15)}} > Easiest  </Button>
+                </div>
+                
+        )
         }  else if (this.state.minutes === 0 && this.state.seconds === 0) { 
             return (
                 <div class = "container"> 
-                    <div class = "row topmargin"> 
+                    <div class = "row topmargin">
                         <div class = "letter"> 
                             <h3> Sorry, you ran out of time! </h3>
                             
-                            <p> P.S You can easily try again by just hard refreshing the page (Ctrl-Shift-R on Windows
+                            <p> P.S You can easily try again by just hard refreshing the page (Ctrl-Shift-R) on Windows
                                 or (Cmd-Shift-R on Mac).</p>
+                        </div>
+                        <div> 
+                            <Navigation active = {this.state.stages}/>
                         </div>
                     </div> 
                 </div> 
             )   
-        } else if (this.state.success === true) { 
-            return (
-                <div class = "container"> 
-                    <div class = "row topmargin"> 
-                        <div class = "letter"> 
-                            <h3> Congrats! You have solved the puzzle! </h3> 
-
-                            <p> We hope you guys enjoyed the puzzle! </p>
-
-                            <p> It took you {60 - this.state.minutes - 1} minutes and {60 - this.state.seconds}  seconds. </p>
-                        </div>
-                    </div> 
-                </div> 
-            )    
-        }else if (this.state.success === false) { 
+        } else if (this.state.success === false) { 
             return (
                 <div class = "container"> 
                     <div class = "row topmargin"> 
                         <div class = "letter"> 
                             <h3> Sorry, you ran out of guesses! </h3>
                             
-                            <p> P.S You can easily try again by just hard refreshing the page (Ctrl-Shift-R on Windows
+                            <p> P.S You can easily try again by just hard refreshing the page (Ctrl-Shift-R) on Windows
                                 or (Cmd-Shift-R on Mac).</p>
                         </div>
                     </div> 
@@ -195,19 +208,21 @@ class App extends Component {
                             <Switch>
                                 <Route path="/" exact render ={(props) => <Home {...props} vals = {this.state.home} onclick = {this.acceptChallenge}/>}/> 
                                 <Route path = "/story" render = {(props) => <Story {...props} active = {this.state.stages[0]} />}/>
-                                <Route path = "/password" render = {(props) => <Password {...props} vals = {this.state.password} succmet = {this.successfulmetric} change = {this.handlevalueChange} active = {this.state.stages[1]}/>}/>     
-                                <Route path = "/starting" render = {(props) => <Starting {...props} active = {this.state.stages[2]}/>}/> 
-                                <Route path = "/todo" render = {(props) => <Stageone {...props} active = {this.state.stages[3]} solved = {this.setsuccess} vals = {this.state.stageone} change = {this.handlevalueChange}/>}/>
-                                <Route path = "/suspects" render = {(props) => <Suspects {...props} vals = {this.state.suspects} active = {this.state.stages[4]} solved = {this.setsuccess} change = {this.handlevalueChange}/>}/> 
-                                <Route path = "/polygraph" render = {(props) => <Polygraph {...props} active = {this.state.stages[5]} solved = {this.setsuccess}/>}/>
-                                <Route path = "/killer" render = {(props) => <Killer {...props} active = {this.state.stages[6]} validate = {this.validatekiller}/>} />
-                                <Route path = "/motive" render = {(props) => <Motive {...props} active = {this.state.stages[7]} solved = {this.setsuccess} vals = {this.state.motive} change = {this.handlevalueChange} />}/>
-                                <Route path = "/how" render = {(props) => <How {...props} active = {this.state.stages[8]} />} />
+                                <Route path = "/starting" render = {(props) => <Starting {...props} active = {this.state.stages[1]}/>}/> 
+                                <Route path = "/todo" render = {(props) => <Stageone {...props} active = {this.state.stages[2]} solved = {this.setsuccess} vals = {this.state.stageone} change = {this.handlevalueChange} hints = {this.state.hints.hints}/>}/>
+                                <Route path = "/suspects" render = {(props) => <Suspects {...props} vals = {this.state.suspects} active = {this.state.stages[3]} solved = {this.setsuccess} change = {this.handlevalueChange} hints = {this.state.hints.hints}/>}/> 
+                                <Route path = "/polygraph" render = {(props) => <Polygraph {...props} active = {this.state.stages[4]} solved = {this.setsuccess} vals = {this.state.emails} change = {this.handlevalueChange} hints = {this.state.hints.hints} />}/>
+                                <Route path = "/killer" render = {(props) => <Killer {...props} active = {this.state.stages[5]} validate = {this.validatekiller}/>} />
+                                <Route path = "/motive" render = {(props) => <Motive {...props} active = {this.state.stages[6]} solved = {this.setsuccess} vals = {this.state.motive} change = {this.handlevalueChange} hints ={this.state.hints.hints} />}/>
+                                <Route path = "/how" render = {(props) => <How {...props} active = {this.state.stages[7]} vals = {this.state.how} change = {this.handlevalueChange} hints = {this.state.hints.hints} />} />
+                                <Route path = "/password" render = {(props) => <Password {...props} vals = {this.state.password} succmet = {this.successfulmetric} solved = {this.setsuccess} change = {this.handlevalueChange} active = {this.state.stages[8]}/>}/>     
+                                <Route path = "/congrats" render = {(props) => <Congrats {...props} minutes = {this.state.minutes} seconds = {this.state.seconds} active = {this.state.stages[9]}/>}/>     
                             </Switch>
                         </div> 
                         <div class = "col-md-3">
                             <div class = "timer"> 
                                 <h1> {this.state.minutes} : {this.state.seconds < 10 ? `0${this.state.seconds}` : this.state.seconds} </h1> 
+                                <h3>  {this.state.hints.hints} hints left </h3> 
                             </div>
                             <Navigation active = {this.state.stages}/>
                         </div>

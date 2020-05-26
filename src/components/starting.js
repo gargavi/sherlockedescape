@@ -45,7 +45,9 @@ const Starting = (props) => {
                 <Col md = {4}> 
                     <div className = "postit"> 
                         <p> 
-                            clues can be anywhere, even on different pages! 
+                            The order of hints are preset, so they will start with most basic to
+                            complete solutions, so a complete solution will "cost you" more. Clues 
+                            can be anywhere, even on other pages.
                         </p>
                     </div>
                     <div className = "postit"> 

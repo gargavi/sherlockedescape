@@ -18,6 +18,10 @@
     font-size: 20px;
 
 }
+
+.longerbox { 
+    width: 60% !important;
+}
 .todo .decrypt{ 
     width: 50%;
     padding-left: 3%;

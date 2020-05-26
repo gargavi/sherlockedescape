@@ -8,8 +8,8 @@ class Password extends Component {
     }
 
     submitAnswer = () => { 
-        if (this.props.vals.who.toLocaleLowerCase().trim() === "arnav" && this.props.vals.how.toLocaleLowerCase().trim() === "11" && this.props.vals.why.toLocaleLowerCase().trim() === "money") { 
-            this.props.succmet(true);
+        if (this.props.vals.who.toLocaleLowerCase().trim() === "arnav" && this.props.vals.how.toLocaleLowerCase().trim() === "7" && this.props.vals.why.toLocaleLowerCase().trim() === "money") { 
+            this.props.solved([9]);
             
         } else {
             if (this.props.vals.tries === 1) { 
@@ -46,6 +46,7 @@ class Password extends Component {
                     <input 
                         name = "how"
                         type = "text"
+                        maxLength = "2"
                         value = {this.props.vals.how}
                         onChange = {this.handleAnyChange}
                     />

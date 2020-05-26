@@ -28,7 +28,7 @@ body {
   border-style: solid;
   border-color: black;
   border-width: 1px;
-  box-shadow: -2px 3px 15px 2px #ebdaa4;
+  box-shadow: -2px 3px 15px #ebdaa4;
   height: 800px;
   /*font-family: 'Dancing Script', cursive; */
   /*font-family: 'Playfair Display', 'serif';*/

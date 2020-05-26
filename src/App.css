@@ -27,6 +27,26 @@
     */
 }
 
+.introb { 
+    margin-top: 18%;
+    text-align: center;
+    font-family: 'Bad Script', cursive;
+}
+.introb h1 { 
+    color: white;
+}
+
+.introb button { 
+    margin: 2%;
+    font-style: italic;
+    font-size: 22px !important;
+    font-family: 'Playfair Display', serif;
+    height: 100px;
+    width: 200px;
+    border-color: white !important;
+    color: white !important;
+    background-color: rgb(85, 7, 7) !important;
+}
 .timer h1 { 
     padding-top: 30%;
     font-size: 60px !important;

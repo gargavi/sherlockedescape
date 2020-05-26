@@ -5,8 +5,8 @@ import lock from "./photos/lock-icon.png";
 
 
 const Navigation = (props) => {
-    const names = ["STORY", "PASSWORD", "STARTING POINT", "TODO", "SUSPECTS", "EMAILS", "KILLER", "SEARCH", "HOW"];
-    const links = ["/story", "/password", "/starting","/todo", "/suspects", "/polygraph", "/killer", "/motive", "/how"];
+    const names = ["STORY",  "STARTING POINT", "TODO", "SUSPECTS", "EMAILS", "KILLER", "SEARCH", "HOW", "PASSWORD", "CONGRATS"];
+    const links = ["/story", "/starting","/todo", "/suspects", "/polygraph", "/killer", "/motive", "/how",  "/password", "/congrats"];
     const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     const pages = nums.map((num) => { 
         if (props.active[num]) {  

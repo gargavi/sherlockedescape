@@ -14,7 +14,7 @@ class Suspects extends Component {
     
     handleClick = () =>  { 
         if ((this.props.vals.first.toLowerCase().trim() === "arnav" && this.props.vals.second.toLowerCase().trim() === "ibis") ||(this.props.vals.first.toLowerCase().trim() === "ibis" && this.props.vals.second.toLowerCase().trim() === "arnav") ){
-            this.props.solved([5, 6]);
+            this.props.solved([4, 5]);
             
             this.props.change("suspects", "correct", true);
         } else {
@@ -67,20 +67,22 @@ class Suspects extends Component {
                     body: "https://www.brainzilla.com/logic/zebra/einsteins-riddle/"}, 
                 {
                     num: "1", 
-                    title: "Additional Attribute ", 
+                    title: "Hint 2: Additional Attribute ", 
                     body: "Arnav works at Zoom"},
                 {
                     num: "2", 
-                    title: "Additional Attribute ", 
+                    title: "Hint 3: Additional Attribute ", 
                     body: "Ibis wears Dress pants"},
                 {
                     num: "3", 
-                    title: "Full Solution",
+                    title: "Fina Hint: Full Solution",
                     body: "Arnav: Zoom, sweats, Sam: Amazon, Pajamas, Ibis: Google, Dress, Sheila: Goldman, Plaid, Paul: Gibson, Striped "
                 }
-            ]
+            ].slice(0, this.props.vals.hints)
             const hints = <Hint
                 values = {hinters}
+                num = {this.props.hints}
+                click = {() => {this.props.change("suspects", "hints", this.props.vals.hints + 1); this.props.change("hints", "hints", this.props.hints - 1)}}
             /> 
             return ( 
                 <div className = "largest">
@@ -93,7 +95,9 @@ class Suspects extends Component {
                         <Nav.Item className = "suspectitem">
                             <Nav.Link eventKey="general" className = "suspectlink"> General Info </Nav.Link>
                         </Nav.Item>
-                        
+                        <Nav.Item className = "suspectitem">
+                            <Nav.Link eventKey="chart" className = "suspectlink"> Chart </Nav.Link>
+                        </Nav.Item>
                         <Nav.Item className = "suspectitem">
                             <Nav.Link eventKey="fourth" className = "suspectlink"> Sheila </Nav.Link>
                         </Nav.Item>
@@ -108,9 +112,6 @@ class Suspects extends Component {
                         </Nav.Item>
                         <Nav.Item className = "suspectitem">
                             <Nav.Link eventKey="first" className = "suspectlink"> Arnav </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item className = "suspectitem">
-                            <Nav.Link eventKey="chart" className = "suspectlink"> Chart </Nav.Link>
                         </Nav.Item>
                         <Nav.Item className = "suspectitem">
                             <Nav.Link eventKey="answer" className = "suspectlink"> Answer: </Nav.Link>
@@ -164,7 +165,7 @@ class Suspects extends Component {
                                     <p> 
                                         Unfortunately, due to our system errors, we were unable to get all 
                                         the information from the suspects you identified. We also pulled some information on Paul, their neighbor 
-                                        who Emily said has just recently been talking to Andrew. What information we did 
+                                        who Karen said has just recently been talking to Andrew. What information we did 
                                         manage to get is displayed in the tabs above. We also were able to get information 
                                         from other sources about where some of these people worked shown below. Finally, we know that they each work at one of the 5 companies:
                                         <b> Goldman, Gibson Law, Google, Amazon or Zoom, </b> which each have separate mandatory dress codes.

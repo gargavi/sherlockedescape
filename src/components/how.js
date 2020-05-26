@@ -11,15 +11,18 @@ function How(props){
                 body: "The pills have to look the exact same, and each one only owns so many pills"}, 
             {
                 num: "1", 
-                title: "Hint 2", 
+                title: "Final Hint", 
                 body: "You can only buy pills in whole numbers, and Arnav bought a certain amount of them extra."},
             
-        ]
+        ].slice(0, props.vals.hints)
         const hints = <Hint
             values = {hinters}
+            num = {props.hints}
+            click = {() => {props.change("how", "hints", props.vals.hints + 1); props.change("hints", "hints", props.hints - 1)}}
+        
         /> 
         return (   
-            <div class = "larger">
+            <div class = "largest">
                 <div class = "how"> 
                 <div class = "finale"> 
                     <p> The last thing we need is to figure out which pill, the <b> HOW </b> that Arnav switched out. 
@@ -49,7 +52,7 @@ function How(props){
                     <ol> 
                         <li> <b>Knee Pain: </b> Oval, marked B,  <b> $4.00</b> </li> 
                         <li> <b>Addy: </b> White, Square, <b> $2.50 </b> </li> 
-                        <li> <b>Early Balding Treatment:</b> Small, marked B, <b> $3.50 </b> </li> 
+                        <li> <b>Early Balding Treatment:</b> Red, Small, marked B, <b> $3.50 </b> </li> 
                         <li> <b> Diarrhea relieve: </b> White, Circular, marked B, <b> $1.50 </b> </li> 
                         <li> <b> High Blood Pressure: </b> Gray, Large, marked A, <b> $1.40 </b> </li> 
                         <li> <b> High Cholesterol: </b> Gray, marked C, <b> $9.00 </b> </li> 
@@ -58,14 +61,14 @@ function How(props){
                         <li> <b> Viagra: </b> Square, Small, <b> $5.00 </b> </li> 
                         <li> <b> Type 1 Diabetes: </b>  Red, Large, marked A, <b> $7.00 </b> </li> 
                         <li> <b> Type 2 Diabetes: </b> Red, Medium, <b>$3.00 </b> </li>
-                        <li> <b> Heart Disease prevention: </b> Red, Large, marked A,<b>$3.00 </b> </li> 
+                        <li> <b> Heart Disease prevention: </b> Red, Large, marked C,<b>$3.00 </b> </li> 
                         <li> <b> Vicodin: </b> White, Circular, marked A, <b> $6.00</b> </li> 
                     </ol> 
 
                 </div> 
 
             </div> 
-            {hints}
+                {hints}
             </div>
         )
     } else { 

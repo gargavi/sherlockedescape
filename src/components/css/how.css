@@ -2,7 +2,6 @@
     text-align: center;
     padding-top: 1%;
     background-color: rgb(240, 231, 182);
-    margin-bottom: 10%;
     height: 900px;
     border-color: black;
     border-style: solid;
@@ -18,6 +17,7 @@
     border-color: black;
     border-width: 2px;
 }
+
 
 .healthprob { 
     width: 46%;
