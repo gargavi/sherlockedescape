@@ -20,11 +20,11 @@ function Home(props){
                     </p>
                     <p> You can check how much time you have left 
                         in the top right corner and use the right to navigate. More levels will open up 
-                        as you successfully complete tasks! The puzzles get progressively harder and we recommend
+                        as you successfully complete tasks, and the puzzles get progressively harder so we recommend
                         that you play with other people either by all doing the puzzle separately and sharing findings, or 
-                        by screen sharing a single screen using any type of video conferencing tool! We spent a lot of time working 
+                        by screen sharing a single screen using any type of video conferencing tool. We spent a lot of time working 
                         on this and hope that you enjoy it, but as a disclaimer we do not take responsibility for any part of our ficton that may 
-                        mirror reality, and we apologize profusely if anything comes across as offensive as it mostly certainly wasn't 
+                        mirror reality, and we apologize if anything comes across as offensive as it mostly certainly wasn't 
                         our intention! 
                     </p>
                     <div class = "buttonhold">  

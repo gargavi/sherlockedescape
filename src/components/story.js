@@ -16,19 +16,19 @@ class Story extends Component {
                     <div class = "letter" id = "storyletter"> 
                         <h3>  THE CASE? </h3> 
 
-                        <p> We got a call, late last night, that a prominent researcher for an emerging vaccine 
-                            was found at this desk dead. This virus has caused the entire world to a standstill and normally, Scotland Yard wouldn't have been
+                        <p> We got a call late last night that a prominent researcher for an emerging vaccine 
+                            was found at this desk dead. This virus has caused the entire world to come to a standstill and normally, Scotland Yard wouldn't have been
                             brought into such a case but the government is anxious to solve this 
-                            case quickly and quietly. He was found by his wife, Karen , who recently tested positive for the viral virus, 
+                            case quickly and quietly. He was found by his wife, Karen , who recently tested positive for the virus, 
                             and has been remaining isolated in her bedroom for the past 8 days. She came to check in for dinner
-                            and found her husband at his desk. 
-                            </p> 
+                            and found her husband.
+                        </p> 
 
                         <p> Because of the virus and the government mandated social distancing, our policeman 
                             can't go to investigate the crime in person; our entire deduction has to be conducted 
-                            remotely. We were able to grab information off of his computer, his social media, some details 
+                            remotely. We were able to grab information off of his computer, his emails, some details 
                             about his company, and some other miscellaenous stuff. We're hoping that you can help us piece it 
-                            all together. You only have an hour to do this before the company has to give a press conference, 
+                            all together. You only have 45 minutes to do this before the company has to give a press conference, 
                             and we need it wrapped up by then.</p> 
                         <div class = "closing"> 
                             <p> Sincerely, </p> 

@@ -1,17 +1,17 @@
 [
     { 
         "title": "About the divorce",
-        "to": "Paul",
+        "to": "Spencer",
         "from": "Andrew",
         "paragraphs": [
-            "Thanks for taking so much time for helping me. I was wondering when the paperwork would be done. It's been a rough couple of weeks in quarantine with Karen since I found out she's been cheating.",  
+            "Thanks for taking so much time for helping me. I was wondering when the paperwork would be done. It's been a rough couple of weeks in quarantine with Karen since I found out what's been going on at her job.",  
             "Let me know if there's anything I need to bring for our meeting later this week." ], 
         "closer": ["Sincerely,", "Andrew", "Ph.D"],
         "number": 1
     }, 
     { 
         "title": "Finance Help",
-        "to": "Sheila",
+        "to": "Claire",
         "from": "Andrew",
         "paragraphs": [
             "I hope you and your family are doing well!", 
@@ -25,7 +25,7 @@
         "to": "Andrew",
         "from": "Samantha",
         "paragraphs": [
-            "Hey Andrew, it's so nice to hear from you! I'm actually a bit confused, I didn't get any text or email from Arnav about a group lunch.", 
+            "Hey Andrew, it's so nice to hear from you! I'm actually a bit confused, I didn't get any text or email from Hasan about a group lunch.", 
             "I'm sure it got lost or something but I've got to stay home and take care of my kids so I can't make it anyway."    
         ], 
         "closer": ["We should catch up though,", "Sam"],
@@ -34,12 +34,12 @@
     { 
         "title": "RE: Apologies (deleted)",
         "to": "Andrew",
-        "from": "Ibis",
+        "from": "Morgan",
         "paragraphs": [
-            "Look I said I'm sorry, there's no need for you to tell my wife. Let's talk this out face to face sometime, I can't really do this over email, and it doesn't really feel right", 
+            "Look I said I'm sorry, there's no need for you to tell my wife about any of this. Let's talk this out face to face sometime, I can't really do this over email", 
             "Email me back when you can."    
         ], 
-        "closer": ["From,", "Ibis"],
+        "closer": ["From,", "Morgan"],
         "number": 4
     },
     { 
@@ -48,32 +48,32 @@
         "from": "Andrew",
         "paragraphs": [
             "Hey Samantha!", 
-            "I was just texting wondering if you were planning on coming to the dinner that me and Arnav are having later. He mentioned inviting you so I thought we could find a central restaurant maybe"
+            "I was just emailing wondering if you were planning on coming to the dinner that me and Hasan are having later. He mentioned inviting you so I thought we could find a restaurant equidistant to all of us maybe"
         ], 
         "closer": ["Best regards,", "Andrew"],
         "number": 5
     },
     { 
         "title": "Re: Catching Up! ",
-        "to": "Arnav",
+        "to": "Hasan",
         "from": "Andrew",
         "paragraphs": [
             "Hey man! Thanks so much for reaching out, it's been forever since we talked! Work has been crazy and I'm feeling really confident with this breakthrough. ", 
         " If you want to, I know this great place in the South part of the city that would be great for us to grab a quick bite at. You're more than welcome to come by the house and eat with us, you're practically family!",
-        "Text me, I'm not checking emails that often anymore"], 
-        "closer": ["Andrew", "Ph.D"],
+        "Text me , I'm not checking emails that often anymore"], 
+        "closer": ["Andrew", "(925)- 699 -8052"],
         "number": 6
     }, 
 
     { 
         "title": "Catching Up! ",
         "to": "Andrew",
-        "from": "Arnav",
+        "from": "Hasan",
         "paragraphs": [
             "Hey Andrew, long time! I recently heard about some of the work you were doing over at that lab of yours and was wondering if you wanted to get together to catch up, just like old times! I'm leaving for a business trip out of country next week so it has to be ASAP!",
             "I really want to hear about your work, and I can tell you how great everything's been going in the past few days for us too! I invited Samantha too!"    
         ], 
-        "closer": ["Talk to you soon,", "Arnav", "C.F.O @ Zoom"],
+        "closer": ["Talk to you soon,", "Hasan", "C.F.O @ Zoom"],
         "number": 7
     }
     

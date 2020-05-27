@@ -5,9 +5,7 @@ import "./css/polygraph.css";
 import Hint from "./hints";
 
 class Polygraph extends Component { 
-    constructor(props) { 
-        super(props) 
-    }
+    
     renderWeb = (previous) => { 
         var email = Object.assign({}, previous);
         const closing = email.closer.map(elem => <p> {elem} </p> );

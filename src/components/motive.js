@@ -9,7 +9,7 @@ class Motive extends Component {
     constructor(props) { 
         super(props)
         this.state = { 
-            correct: ["m", "o", "n", "e", "y"]
+            correct: ["n", "o", "d", "h", "y"]
         }
     }
     handleInputChange = (event) => {
@@ -37,7 +37,7 @@ class Motive extends Component {
                 return ( 
                     <div class = "motive"> 
                         <div class = "head"> 
-                            <p> On your intuition, we were able to get the following SSH access to Arnav's computer. We were hoping you 
+                            <p> On your intuition, we were able to get the following SSH access to Hasan's computer. We were hoping you 
                                 could get some hard core evidence off of it by cracking the passcode.</p>
                         
                         </div> 
@@ -91,7 +91,7 @@ class Motive extends Component {
                     {
                         num: "5", 
                         title: "Final Hint: Everything ",
-                        body: "Black: Months, Green: Three, Gold: Presidents, Green: Fibonaaci, Purple: See You; middle gives your the roman numerals of what letter to use from each word in corresponding color piece. " 
+                        body: "Black: Months, Red: Three, Gold: Presidents, Green: Fibonaaci, Purple: See You; middle gives your the roman numerals of what letter to use from each word in corresponding color piece. " 
                     }
                 ].slice(0, this.props.vals.hints)
                 const hints = <Hint
@@ -104,7 +104,7 @@ class Motive extends Component {
                     <div class = "largest">
                     <div class = "motive">
                         <div class = "head"> 
-                            <p> On your intuition, we were able to get the following SSH access to Arnav's computer. We were hoping you 
+                            <p> On your intuition, we were able to get the following SSH access to Hasan's computer. We were hoping you 
                                 could get some hard core evidence off of it by cracking the passcode.</p>
                             
                         </div> 

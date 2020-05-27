@@ -1,7 +1,7 @@
 import React from 'react';
 import "./css/navigation.css";
 import { NavLink } from 'react-router-dom';
-import lock from "./photos/lock-icon.png";
+//import lock from "./photos/lock-icon.png";
 
 
 const Navigation = (props) => {
@@ -11,7 +11,7 @@ const Navigation = (props) => {
     const pages = nums.map((num) => { 
         if (props.active[num]) {  
             return (<li> 
-                <img alt= "lock" src = {lock} className = "whiteback" style = {{height: "20px"}} />
+                {/*<img alt= "lock" src = {lock} className = "whiteback" style = {{height: "20px"}} />*/}
                 <NavLink activeStyle = {{color: 'white'}} className = "links" to={links[num]}> {names[num]} </NavLink>
             </li>
             )
@@ -22,7 +22,7 @@ const Navigation = (props) => {
         <div className = "navigation"> 
             <ul> 
                 <li> 
-                    <img alt= "lock" src = {lock} className = "whiteback" style = {{height: "20px"}} />
+                    {/*<img alt= "lock" src = {lock} className = "whiteback" style = {{height: "20px"}} /> */}
                     <NavLink exact activeStyle = {{color: 'white'}} className = "links" to= "/"> HOME </NavLink>
                 </li>
                 {pages}

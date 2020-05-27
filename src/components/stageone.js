@@ -16,10 +16,10 @@ class Stageone extends Component {
         }
     }
     handleSubmit = () => { 
-        if (this.props.vals.first_guess.toLowerCase().trim() === "arnav" 
+        if (this.props.vals.first_guess.toLowerCase().trim() === "hasan" 
         && this.props.vals.second_guess.toLowerCase().trim() === "sam" 
-        && this.props.vals.third_guess.toLowerCase().trim() === "ibis"
-        && this.props.vals.fourth_guess.toLowerCase().trim() === "sheila"){
+        && this.props.vals.third_guess.toLowerCase().trim() === "morgan"
+        && this.props.vals.fourth_guess.toLowerCase().trim() === "claire"){
             this.props.change("stageone", "solved", true);
             this.props.solved([3]);
         } else { 
@@ -60,7 +60,7 @@ class Stageone extends Component {
                 {
                     num: "2", 
                     title: "Final Hint: Full Decryption",
-                    body: "Lunch with Arnav, Call Sam & Ibis Back, Respond to Sheila, Pick up meds"
+                    body: "Lunch with hasan, Call Sam & Morgan Back, Respond to Claire, Pick up meds"
                 }
             ].slice(0, this.props.vals.hints)
             const hints = <Hint
@@ -86,9 +86,8 @@ class Stageone extends Component {
                             <tbody>
                                 
                                 <tr> 
-                                    <td className = "stageonetd"> Mwqgm c/ Hzwkg </td> 
+                                    <td className = "stageonetd"> Mwqgm c Oibky </td> 
                                     <td className = "stageonetd"> 
-                                    <label>Lunch  </label>
                                     <input
                                         name = "first"
                                         type = "text"
@@ -98,7 +97,7 @@ class Stageone extends Component {
                                     </td> 
                                 </tr>
                                 <tr> 
-                                    <td className = "stageonetd"> Dcop Xgt  &amp; Qksd nnqz </td> 
+                                    <td className = "stageonetd"> Dcop Xgt &amp; Uxbrma ppsb </td> 
                                     <td className = "stageonetd"> 
                                     <input
                                         name = "second"
@@ -111,11 +110,12 @@ class Stageone extends Component {
                                     </td> 
                                 </tr>
                                 <tr> 
-                                    <td className = "stageonetd"> Sgvtttk bx Csqvzp </td> 
+                                    <td className = "stageonetd"> Sgvtttk bx Mwmvft </td> 
                                     <td className = "stageonetd"> 
                                     <input
                                         name = "third"
                                         type = "text"
+                                        className = "longerbox"
                                         value = {this.props.vals.third}
                                         onChange = {this.handleAnyChange}
                                     />     

@@ -8,8 +8,9 @@ class Password extends Component {
     }
 
     submitAnswer = () => { 
-        if (this.props.vals.who.toLocaleLowerCase().trim() === "arnav" && this.props.vals.how.toLocaleLowerCase().trim() === "7" && this.props.vals.why.toLocaleLowerCase().trim() === "money") { 
+        if (this.props.vals.who.toLocaleLowerCase().trim() === "hasan" && this.props.vals.how.toLocaleLowerCase().trim() === "7" && this.props.vals.why.toLocaleLowerCase().trim() === "money") { 
             this.props.solved([9]);
+            this.props.change("password", "solved", true);
             
         } else {
             if (this.props.vals.tries === 1) { 
@@ -22,6 +23,15 @@ class Password extends Component {
     
     render () { 
         if (this.props.active) { 
+            
+            let button1;
+            if (this.props.vals.solved) { 
+                button1 = <h4> Solved! </h4> 
+            } else { 
+                button1 = <Button type = "submit" id = "submitanswer" onClick = {this.submitAnswer}> Submit </Button>;
+
+            }
+
             return ( 
                 <div class = "letter" id = "passwordletter"> 
                     <h3> We know who done it!  </h3> 
@@ -63,8 +73,7 @@ class Password extends Component {
                     </div> 
                     <div id = "remaining"> 
                         <p> You have {this.props.vals.tries} tries remaining. </p> 
-                        <Button type = "submit" id = "submitanswer" onClick = {this.submitAnswer}> Submit </Button>
-
+                        {button1}
                     </div> 
                   
                 </div> 
