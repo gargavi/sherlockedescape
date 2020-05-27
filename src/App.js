@@ -164,10 +164,10 @@ class App extends Component {
                 <div className = "introb"> 
                     <h1> Ready to Play? </h1>
                     <Button  variant = "primary" onClick = {() => {this.enteredRoom(0)}} > Hardest </Button>
-                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(3)}} > Hard </Button>
-                    <Button  variant = "primary" onClick = {() => this.enteredRoom(7)} > Medium </Button>
-                    <Button  variant = "primary" onClick = {() => this.enteredRoom(10)} > Easy </Button>
-                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(15)}} > Easiest  </Button>
+                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(2)}} > Hard </Button>
+                    <Button  variant = "primary" onClick = {() => this.enteredRoom(5)} > Medium </Button>
+                    <Button  variant = "primary" onClick = {() => this.enteredRoom(7)} > Easy </Button>
+                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(12)}} > Easiest  </Button>
                 </div>
                 
         )
