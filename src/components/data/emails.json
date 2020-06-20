@@ -1,7 +1,7 @@
 [
     { 
         "title": "About the divorce",
-        "to": "Spencer",
+        "to": "Hasan",
         "from": "Andrew",
         "paragraphs": [
             "Thanks for taking so much time for helping me. I was wondering when the paperwork would be done. It's been a rough couple of weeks in quarantine with Karen since I found out what's been going on at her job.",  
@@ -25,7 +25,7 @@
         "to": "Andrew",
         "from": "Samantha",
         "paragraphs": [
-            "Hey Andrew, it's so nice to hear from you! I'm actually a bit confused, I didn't get any text or email from Hasan about a group lunch.", 
+            "Hey Andrew, it's so nice to hear from you! I'm actually a bit confused, I didn't get any text or email from Jerry about a group lunch.", 
             "I'm sure it got lost or something but I've got to stay home and take care of my kids so I can't make it anyway."    
         ], 
         "closer": ["We should catch up though,", "Sam"],
@@ -48,14 +48,14 @@
         "from": "Andrew",
         "paragraphs": [
             "Hey Samantha!", 
-            "I was just emailing wondering if you were planning on coming to the dinner that me and Hasan are having later. He mentioned inviting you so I thought we could find a restaurant equidistant to all of us maybe"
+            "I was just emailing wondering if you were planning on coming to the dinner that me and Jerry are having later. He mentioned inviting you so I thought we could find a restaurant equidistant to all of us maybe"
         ], 
         "closer": ["Best regards,", "Andrew"],
         "number": 5
     },
     { 
         "title": "Re: Catching Up! ",
-        "to": "Hasan",
+        "to": "Jerry",
         "from": "Andrew",
         "paragraphs": [
             "Hey man! Thanks so much for reaching out, it's been forever since we talked! Work has been crazy and I'm feeling really confident with this breakthrough. ", 
@@ -68,12 +68,12 @@
     { 
         "title": "Catching Up! ",
         "to": "Andrew",
-        "from": "Hasan",
+        "from": "Jerry",
         "paragraphs": [
             "Hey Andrew, long time! I recently heard about some of the work you were doing over at that lab of yours and was wondering if you wanted to get together to catch up, just like old times! I'm leaving for a business trip out of country next week so it has to be ASAP!",
             "I really want to hear about your work, and I can tell you how great everything's been going in the past few days for us too! I invited Samantha too!"    
         ], 
-        "closer": ["Talk to you soon,", "Hasan", "C.F.O @ Zoom"],
+        "closer": ["Talk to you soon,", "Jerry", "C.F.O @ Zoom"],
         "number": 7
     }
     

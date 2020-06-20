@@ -8,7 +8,7 @@ class Password extends Component {
     }
 
     submitAnswer = () => { 
-        if (this.props.vals.who.toLocaleLowerCase().trim() === "hasan" && this.props.vals.how.toLocaleLowerCase().trim() === "7" && this.props.vals.why.toLocaleLowerCase().trim() === "money") { 
+        if (this.props.vals.who.toLocaleLowerCase().trim() === "jerry" && this.props.vals.how.toLocaleLowerCase().trim() === "7" && this.props.vals.why.toLocaleLowerCase().trim() === "money") { 
             this.props.solved([9]);
             this.props.change("password", "solved", true);
             

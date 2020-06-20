@@ -16,7 +16,7 @@ class Stageone extends Component {
         }
     }
     handleSubmit = () => { 
-        if (this.props.vals.first_guess.toLowerCase().trim() === "hasan" 
+        if (this.props.vals.first_guess.toLowerCase().trim() === "jerry" 
         && this.props.vals.second_guess.toLowerCase().trim() === "sam" 
         && this.props.vals.third_guess.toLowerCase().trim() === "morgan"
         && this.props.vals.fourth_guess.toLowerCase().trim() === "claire"){
@@ -52,15 +52,15 @@ class Stageone extends Component {
                 {
                     num: "0", 
                     title: "Hint 1", 
-                    body: "Buy Milk -> Cwb Qnrr"}, 
+                    body: "Asv Idfd -> Buy Milk"}, 
                 {
                     num: "1", 
                     title: "Hint 2: Full Cipher", 
-                    body: "You translate every letter to x numbers in the alphabet after it where x is its position. (u is the second letter in Buy so you move it two spaces to w, y is the third letter so its becomes A"},
+                    body: "You translate every letter to x numbers in the alphabet after it where x is its position. (u is the second letter in Buy so you move it two spaces to s, y is the third letter so its becomes v"},
                 {
                     num: "2", 
                     title: "Final Hint: Full Decryption",
-                    body: "Lunch with hasan, Call Sam & Morgan Back, Respond to Claire, Pick up meds"
+                    body: "Lunch with jerry, Call Sam & Morgan Back, Respond to Claire, Pick up meds"
                 }
             ].slice(0, this.props.vals.hints)
             const hints = <Hint
@@ -70,7 +70,12 @@ class Stageone extends Component {
             /> 
             return (
                     <div className = "largest"> 
-                    <div class = "todo" style = {{backgroundImage: `url(${Background})`}}> 
+                    <div class = "instructions">
+                    <p> Only the word back was decrypted, but we think decrypting the rest of Andrew's todo list might 
+                        hold keys for the suspects.  
+                    </p>
+                    </div>
+                   <div class = "todo" style = {{backgroundImage: `url(${Background})`}}> 
                         <h3>  To-Do List </h3> 
                         <table className = "todotable">
                             <thead>
@@ -86,7 +91,7 @@ class Stageone extends Component {
                             <tbody>
                                 
                                 <tr> 
-                                    <td className = "stageonetd"> Mwqgm c Oibky </td> 
+                                    <td className = "stageonetd"> Kskyc Q Cwihn </td> 
                                     <td className = "stageonetd"> 
                                     <input
                                         name = "first"
@@ -97,7 +102,7 @@ class Stageone extends Component {
                                     </td> 
                                 </tr>
                                 <tr> 
-                                    <td className = "stageonetd"> Dcop Xgt &amp; Uxbrma ppsb </td> 
+                                    <td className = "stageonetd"> Byih Nuf &amp; Efhvoa nlmt</td> 
                                     <td className = "stageonetd"> 
                                     <input
                                         name = "second"
@@ -106,11 +111,11 @@ class Stageone extends Component {
                                         value = {this.props.vals.second}
                                         onChange = {this.handleAnyChange}
                                     />
-                                    <label> back  </label>
+                                    <label style = {{textDecorationLine: "underline"}}> back  </label>
                                     </td> 
                                 </tr>
                                 <tr> 
-                                    <td className = "stageonetd"> Sgvtttk bx Mwmvft </td> 
+                                    <td className = "stageonetd"> Qcpljhw lf Saovdp </td> 
                                     <td className = "stageonetd"> 
                                     <input
                                         name = "third"
@@ -122,7 +127,7 @@ class Stageone extends Component {
                                     </td> 
                                 </tr>
                                 <tr> 
-                                    <td className = "stageonetd"> Qkfo zv tmmc </td> 
+                                    <td className = "stageonetd"> Ogzg pj Fwui </td> 
                                     <td className = "stageonetd"> 
                                     <input
                                         name = "fourth"

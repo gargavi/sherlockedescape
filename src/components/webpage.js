@@ -2,7 +2,7 @@ import React from 'react';
 import "./css/webpage.css";
 
 function Webpage(props) {
-    const paras = props.paragraphs.map(para => <p> {para} </p>);
+    const paras = props.paragraphs.map((para, index) => <p key = {index}> {para} </p>);
     let title;
     if (props.title) { 
         title = <div class = "webtitle"> {props.title} </div>

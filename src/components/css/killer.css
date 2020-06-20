@@ -1,20 +1,23 @@
 .killer { 
     text-align: center;
-    margin-top: 25%;
     font-family: 'Playfair display', serif;
     
 }
 .killer label{ 
-    color: white;
+    color: black;
     display: block;
-    font-size: 50px;
+    font-size: 40px;
 }
 .killer p { 
-    color: white;
+    color: black;
+    font-size: 20px;
 }
 
-.killer input { 
+.killer select { 
     height: 40px;
+    text-align: center;
+    width: 100px;
+    border-style: none;
 }
 
 .killer button { 
@@ -23,4 +26,8 @@
     height: 50px;
     font-size: 20px;
     width: 100px;
+}
+
+.killer h3 { 
+    text-align: center !important;
 }

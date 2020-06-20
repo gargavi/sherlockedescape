@@ -9,7 +9,7 @@ class Motive extends Component {
     constructor(props) { 
         super(props)
         this.state = { 
-            correct: ["n", "o", "d", "h", "y"]
+            correct: ["o", "y", "n", "m", "e"]
         }
     }
     handleInputChange = (event) => {
@@ -37,7 +37,7 @@ class Motive extends Component {
                 return ( 
                     <div class = "motive"> 
                         <div class = "head"> 
-                            <p> On your intuition, we were able to get the following SSH access to Hasan's computer. We were hoping you 
+                            <p> On your intuition, we were able to get the following SSH access to Jerry's computer. We were hoping you 
                                 could get some hard core evidence off of it by cracking the passcode.</p>
                         
                         </div> 
@@ -45,13 +45,14 @@ class Motive extends Component {
                         <div class = "screen" style = {{backgroundImage: `url(${Background})`}}>
                             <div class = "evidence">
 
-                                <h2> Diary Entry </h2>
-                                <h5> I'm worried about the <b> MONEY </b> </h5> 
+                                <h2> Diary Entry:   <b> (WHY) </b> I did it </h2>
+                                <h5>  Password <b> "oynme" </b> was successful </h5> 
 
                                 <div className = "explanation"> 
                                     I'm worried that Andrew's research is going to ruin me. I've convinced the board that the quarantine will last 
                                     for months, and now with the vaccine coming so soon because of Andrew, it may just be a matter of days. Our stock 
-                                    price will tank with this news and there's a good chance I will be fired because of it. I have to put a stop to this 
+                                    price will tank with this news and there's a good chance I will be fired because of it. I'll lose all my life savings, 
+                                    all my <b> money </b>. I have to put a stop to this 
                                     research somehow, it doesn't matter how long I've known Andrew, I have kids and a family now. I wonder if he's still 
                                     taking those pills for his condition, I think I have some that look exactly like them....
                                 </div> 
@@ -62,36 +63,32 @@ class Motive extends Component {
             } else { 
                 const hinters = [
                     {   num: "-1", 
-                        title: "Freebie: Try",
-                        body: "Each webpage gives a SINGLE WORD either by a pattern it demonstrates or by completing the ? or _ "
+                        title: "Freebie Hint",
+                        body: "Each webpage gives a SINGLE WORD either by a pattern it demonstrates or by completing the ? or _. The roman numeral gives the position of the letter in the word that the passcode uses. "
                     },
                     {
-                        num: "0", 
+                        num: "2",
+                        title: "Hint Gold Text ", 
+                        body: "Disney Movies"
+                    },
+                    {
+                        num: "3", 
                         title: "Hint: Black Text", 
                         body: "Calendar"}, 
                     {
-                        num: "1", 
-                        title: "Hint: Red Text", 
-                        body: "Look at the instructions once again."},
-                    {
-                        num: "2", 
-                        title: "Hint: Gold Text",
-                        body: "Look at the starting letters. See anything that looks familiar?" 
-                    }, 
-                    {
-                        num: "3", 
-                        title: "Hint: Gold Text pt.2",
-                        body: "U.S.A, U.S.A, U.S.A" 
-                    }, 
-                    {
                         num: "4", 
+                        title: "Hint: Red Text", 
+                        body: "Look at the instructions once again."
+                    },
+                    {
+                        num: "5", 
                         title: "Hint: Purple Text",
                         body: "periodic" 
                     }, 
                     {
-                        num: "5", 
+                        num: "6", 
                         title: "Final Hint: Everything ",
-                        body: "Black: Months, Red: Three, Gold: Presidents, Green: Fibonaaci, Purple: See You; middle gives your the roman numerals of what letter to use from each word in corresponding color piece. " 
+                        body: "Black: Months, Red: Three, Gold: Princesses, Green: Fibonaaci, Purple: See You; " 
                     }
                 ].slice(0, this.props.vals.hints)
                 const hints = <Hint
@@ -104,15 +101,15 @@ class Motive extends Component {
                     <div class = "largest">
                     <div class = "motive">
                         <div class = "head"> 
-                            <p> On your intuition, we were able to get the following SSH access to Hasan's computer. We were hoping you 
-                                could get some hard core evidence off of it by cracking the passcode.</p>
+                            <p> On your intuition, we were able to get the following SSH access to Jerry's computer. We were hoping you 
+                                could get some concrete evidence off of it by cracking the passcode.</p>
                             
                         </div> 
 
                         <div class = "screen" style = {{backgroundImage: `url(${Background})`}}>
                             <div class = "graphic1"> 
                                 <Webpage 
-                                    paragraphs = {["J. Jason", "DJ", "FM/AM"]}
+                                    paragraphs = {["J. JASON", "DJ", "FM/AM"]}
                                 /> 
                                 
                             </div> 
@@ -123,14 +120,14 @@ class Motive extends Component {
                             </div> 
                             <div class = "graphic3"> 
                                 <Webpage 
-                                    paragraphs = {[ "What do you own but other's use more than you?", "0, 1, 1, 2, 3, 5, 8, 13 ..."]}
+                                    paragraphs = {[ "0, 1, 1, 2, 3, 5, 8, 13, 21"]}
                                 /> 
                             </div> 
                             <div class = "graphic4"> 
                                 <Webpage 
-                                    title = "Shopping List"
+                                    title = "Jas, Mul, Ari, Els are _ if "
                                     paragraphs = {[
-                                    "Diced Tomatoes", "Blood Oranges", "Great Beans", "Blue Cheese", "Grain Bread" ]}
+                                   "Jas from A", "Mul from M", "Ari from LM", "Els from F" ]}
                                 /> 
                             </div> 
                             <div class = "graphic5"> 

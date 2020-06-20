@@ -27,8 +27,9 @@ class App extends Component {
     constructor(props) { 
         super(props) 
         this.state = { 
-            entered: false, 
-            minutes: 45, 
+            entered: false,
+            starting_minutes: 60,
+            minutes: 60, 
             seconds: 0,
             success: null,
             stages: [false, false, false, false, false, false, false, false, false], 
@@ -60,10 +61,26 @@ class App extends Component {
                 correct: false,
                 first: "",
                 second: "",
+                inputs: {
+                    "Amazon": Array(5).fill(""),
+                    "Goldman": Array(5).fill(""), 
+                    "Gibson": Array(5).fill(""),
+                    "Google": Array(5).fill(""),
+                    "Zoom": Array(5).fill(""), 
+                    "Plaid": Array(5).fill(""),
+                    "Pajamas": Array(5).fill(""),
+                    "Stripes": Array(5).fill(""),
+                    "Sweats": Array(5).fill(""),
+                    "Dress": Array(5).fill("")
+                },
                 hints: 0
             },
             emails: { 
                 hints: 0
+            },
+            killer: { 
+                value: "",
+                entered: false
             },
             motive: { 
                 correct: false,
@@ -79,9 +96,11 @@ class App extends Component {
             
         }
     }
-    enteredRoom = (num) => {
+    enteredRoom = (num, minutes) => {
         this.setState({ 
-            entered: true
+            entered: true, 
+            minutes: minutes,
+            starting_minutes: minutes
         })
         this.handlevalueChange("hints", "hints", num);
     }
@@ -137,9 +156,11 @@ class App extends Component {
         })
         clearInterval(this.myInterval);
     }
-    validatekiller = (name) => { 
-        if (name.toLowerCase().trim() === "hasan") { 
+    validatekiller = (name) => {
+        console.log(name)
+        if (name.toLowerCase().trim() === "jerry") { 
             this.setsuccess([6]);
+            this.handlevalueChange("killer", "entered", true);
         } else {
             this.setState({
                 success: false
@@ -163,11 +184,11 @@ class App extends Component {
             return ( 
                 <div className = "introb"> 
                     <h1> Ready to Play? </h1>
-                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(0)}} > Hardest </Button>
-                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(2)}} > Hard </Button>
-                    <Button  variant = "primary" onClick = {() => this.enteredRoom(5)} > Medium </Button>
-                    <Button  variant = "primary" onClick = {() => this.enteredRoom(7)} > Easy </Button>
-                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(12)}} > Easiest  </Button>
+                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(1, 60)}} > Hardest </Button>
+                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(3, 60)}} > Hard </Button>
+                    <Button  variant = "primary" onClick = {() => this.enteredRoom(5, 65)} > Medium </Button>
+                    <Button  variant = "primary" onClick = {() => this.enteredRoom(7, 70)} > Easy </Button>
+                    <Button  variant = "primary" onClick = {() => {this.enteredRoom(12, 70)}} > Easiest  </Button>
                 </div>
                 
         )
@@ -182,7 +203,6 @@ class App extends Component {
                                 or (Cmd-Shift-R on Mac).</p>
                         </div>
                         <div> 
-                            <Navigation active = {this.state.stages}/>
                         </div>
                     </div> 
                 </div> 
@@ -213,17 +233,17 @@ class App extends Component {
                                 <Route path = "/todo" render = {(props) => <Stageone {...props} active = {this.state.stages[2]} solved = {this.setsuccess} vals = {this.state.stageone} change = {this.handlevalueChange} hints = {this.state.hints.hints}/>}/>
                                 <Route path = "/suspects" render = {(props) => <Suspects {...props} vals = {this.state.suspects} active = {this.state.stages[3]} solved = {this.setsuccess} change = {this.handlevalueChange} hints = {this.state.hints.hints}/>}/> 
                                 <Route path = "/polygraph" render = {(props) => <Polygraph {...props} active = {this.state.stages[4]} solved = {this.setsuccess} vals = {this.state.emails} change = {this.handlevalueChange} hints = {this.state.hints.hints} />}/>
-                                <Route path = "/killer" render = {(props) => <Killer {...props} active = {this.state.stages[5]} validate = {this.validatekiller}/>} />
+                                <Route path = "/killer" render = {(props) => <Killer {...props} vals = {this.state.killer}active = {this.state.stages[5]} validate = {this.validatekiller} change = {this.handlevalueChange}/>} />
                                 <Route path = "/motive" render = {(props) => <Motive {...props} active = {this.state.stages[6]} solved = {this.setsuccess} vals = {this.state.motive} change = {this.handlevalueChange} hints ={this.state.hints.hints} />}/>
                                 <Route path = "/how" render = {(props) => <How {...props} active = {this.state.stages[7]} vals = {this.state.how} change = {this.handlevalueChange} hints = {this.state.hints.hints} />} />
                                 <Route path = "/password" render = {(props) => <Password {...props} vals = {this.state.password} succmet = {this.successfulmetric} solved = {this.setsuccess} change = {this.handlevalueChange} active = {this.state.stages[8]}/>}/>     
-                                <Route path = "/congrats" render = {(props) => <Congrats {...props} minutes = {this.state.minutes} seconds = {this.state.seconds} active = {this.state.stages[9]} name = {this.state.password.name} />}/>     
+                                <Route path = "/congrats" render = {(props) => <Congrats {...props} minutes = {this.state.starting_minutes - this.state.minutes} seconds = {this.state.seconds} active = {this.state.stages[9]} name = {this.state.password.name} />}/>     
                             </Switch>
                         </div> 
                         <div class = "col-md-3">
                             <div class = "timer"> 
                                 <h1> {this.state.minutes} : {this.state.seconds < 10 ? `0${this.state.seconds}` : this.state.seconds} </h1> 
-                                <h3>  {this.state.hints.hints} hints left </h3> 
+                                <h4>  {this.state.hints.hints} hints left </h4> 
                             </div>
                             <Navigation active = {this.state.stages}/>
                         </div>

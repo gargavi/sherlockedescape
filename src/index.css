@@ -1,6 +1,6 @@
 body {
   font-family: 'Playfair Display', serif;
-  
+
 }
 
 .topmargin { 
@@ -29,7 +29,7 @@ body {
   border-color: black;
   border-width: 1px;
   box-shadow: -2px 3px 15px #ebdaa4;
-  height: 800px;
+  padding-bottom: 10%;
   /*font-family: 'Dancing Script', cursive; */
   /*font-family: 'Playfair Display', 'serif';*/
   font-family: 'Bad Script',  cursive;
@@ -37,6 +37,10 @@ body {
   margin-bottom: 4%;
   transform: rotate(-3deg);
   
+}
+
+.letter iframe { 
+  width: 100%;
 }
 .largest { 
   margin-bottom: 10%;

@@ -6,7 +6,7 @@ function Hint(props){
     const hinters = props.values.map((elem) => { 
         return (
             
-            <Card>
+            <Card key = {elem.toString()}>
                 <Card.Header>
                 <Accordion.Toggle as={Button} className = "hinttitle" variant="link" eventKey={elem.num}>
                     {elem.title}

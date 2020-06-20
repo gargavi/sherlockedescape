@@ -5,16 +5,22 @@ import { NavLink } from 'react-router-dom';
 
 
 const Navigation = (props) => {
-    const names = ["STORY",  "STARTING POINT", "TODO", "SUSPECTS", "EMAILS", "KILLER", "SEARCH", "HOW", "PASSWORD", "CONGRATS"];
+    const names = ["STORY",  "STARTING POINT", "TODO", "SUSPECTS", "EMAILS", "KILLER", "SEARCH", "HOW", "PASSWORD", "SOLVED?"];
     const links = ["/story", "/starting","/todo", "/suspects", "/polygraph", "/killer", "/motive", "/how",  "/password", "/congrats"];
     const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     const pages = nums.map((num) => { 
         if (props.active[num]) {  
-            return (<li> 
+            return (<li key = {names[num]}> 
                 {/*<img alt= "lock" src = {lock} className = "whiteback" style = {{height: "20px"}} />*/}
-                <NavLink activeStyle = {{color: 'white'}} className = "links" to={links[num]}> {names[num]} </NavLink>
+                <NavLink activeStyle = {{fontWeight: "bold", color: 'maroon'}} className = "links" to={links[num]}> {names[num]} </NavLink>
             </li>
             )
+        } else { 
+            return(
+            <li key = {names[num]} className = " disabled"> 
+                {/*<img alt= "lock" src = {lock} className = "whiteback" style = {{height: "20px"}} />*/}
+                  {names[num]}
+            </li>)
         }
     })
 
@@ -23,7 +29,7 @@ const Navigation = (props) => {
             <ul> 
                 <li> 
                     {/*<img alt= "lock" src = {lock} className = "whiteback" style = {{height: "20px"}} /> */}
-                    <NavLink exact activeStyle = {{color: 'white'}} className = "links" to= "/"> HOME </NavLink>
+                    <NavLink exact  activeStyle = {{fontWeight: "bold", color: 'maroon'}} className = "links" to= "/"> HOME </NavLink>
                 </li>
                 {pages}
                

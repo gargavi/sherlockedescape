@@ -8,11 +8,12 @@ function How(props){
             {
                 num: "0", 
                 title: "Hint 1", 
-                body: "The pills have to look the exact same, and each one only owns so many pills"}, 
+                body: "The pills cannot look different at all, and each one only owns so many pills"}, 
             {
                 num: "1", 
-                title: "Final Hint", 
-                body: "You can only buy pills in whole numbers, and Hasan bought a certain amount of them extra."},
+                title: "Final Answer", 
+                body: "Jerry switched out Andrew's type 2 diabetes with his Nauseau pills"
+            }
             
         ].slice(0, props.vals.hints)
         const hints = <Hint
@@ -25,18 +26,19 @@ function How(props){
             <div class = "largest">
                 <div class = "how"> 
                 <div class = "finale"> 
-                    <p> The last thing we need is to figure out which pill, the <b> HOW </b> that Hasan switched out. 
-                        We've compiled the following information and know that he bought some amount extra of the pill supply. Put 
-                        the number of the list in the letter.
+                    <p> The last thing we need is to figure out which pill (the <b> HOW </b>) that Jerry switched out for Andrew's 
+                        medication. We've compiled the following partial information about some of the medications, and we know that the only 
+                        difference between Jerry's expenses last month and this month were a whole number of the pills he used to kill Andrew. Your 
+                        answer should be the <b> number </b> of the pill that Jerry bought from the list below. 
                     </p> 
                 </div> 
                 <div class = "healthprob"> 
-                    <h5> Prescriptions under Hasan's Name</h5>
+                    <h5> Prescriptions under Jerry's Name</h5>
                     <ul>
                         <li> High Cholesterol </li> 
                         <li> Nausea </li>
                         <li> Diarrhea </li>
-                        <li> Erectile Dysfunction</li>
+                        <li> Erectile Dysfunction (Viagra) </li>
                         <li> Heart Disease </li> 
                     </ul>
                 </div> 
@@ -56,7 +58,7 @@ function How(props){
                         <li> <b> Diarrhea relieve: </b> White, Circular, marked B, <b> $1.30 </b> </li> 
                         <li> <b> High Blood Pressure: </b> Gray, Large, marked A, <b> $2.00 </b> </li> 
                         <li> <b> High Cholesterol: </b> Gray, marked C, <b> $.50 </b> </li> 
-                        <li> <b> Nause Medication: </b> Medium, marked A, <b>$3.00 </b>  </li> 
+                        <li> <b> Nausea Medication: </b> Medium, marked A, <b>$3.00 </b>  </li> 
                         <li> <b> Hearing Loss ailment: </b> Square, Medium, <b>$1.25 </b> </li> 
                         <li> <b> Viagra: </b> Square, Small, <b> $2.50 </b> </li> 
                         <li> <b> Type 1 Diabetes: </b>  Red, Large, marked A, <b> $3.20 </b> </li> 

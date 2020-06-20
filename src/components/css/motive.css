@@ -137,20 +137,20 @@
     color: black;
 }
 .password .first { 
-    border-bottom-color: black;
+    border-bottom-color: green;
 }
 
 .password .second { 
-    border-bottom-color: green;
+    border-bottom-color:rgb(189, 15, 189);
 }
 .password .third {
     border-bottom-color: rgb(170, 111, 1);
 }
 .password .fourth {
-    border-bottom-color:red;
+    border-bottom-color:black;
 }
 .password .fifth {
-    border-bottom-color:rgb(189, 15, 189);
+    border-bottom-color:red;
 }
 
 .evidence { 
