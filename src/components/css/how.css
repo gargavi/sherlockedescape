@@ -30,6 +30,7 @@
 } 
 .healthprob h5 { 
     color: black;
+    font-weight: bold;
 }
 .healthprob li { 
     list-style-type: none;

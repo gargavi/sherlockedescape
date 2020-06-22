@@ -26,10 +26,9 @@ function How(props){
             <div class = "largest">
                 <div class = "how"> 
                 <div class = "finale"> 
-                    <p> The last thing we need is to figure out which pill (the <b> HOW </b>) that Jerry switched out for Andrew's 
-                        medication. We've compiled the following partial information about some of the medications, and we know that the only 
-                        difference between Jerry's expenses last month and this month were a whole number of the pills he used to kill Andrew. Your 
-                        answer should be the <b> number </b> of the pill that Jerry bought from the list below. 
+                    <p> We need to figure out HOW Andrew was killed - we know that Jerry switched Andrew's medication with one of his own. We've compiled the following partial information about some of the medications, and we know that the only 
+                        difference between Jerry's expenses last month and this month were the pills he used to kill Andrew. <b> You can only 
+                            buy pills in whole numbers </b> 
                     </p> 
                 </div> 
                 <div class = "healthprob"> 
@@ -45,8 +44,8 @@ function How(props){
                 <div class = "healthprob">
                     <h5> Money Spent on Prescriptions </h5>    
                     <ul> 
-                        <li> Total Spent on Prescriptions Last Month: 450 </li>
-                        <li> Total Spent on Prescription This Month: 462 </li> 
+                        <li> Total Spent on Prescriptions Last Month: $450 </li>
+                        <li> Total Spent on Prescription This Month: $462 </li> 
                     </ul> 
                 </div> 
                 <div class = "descriptions"> 
@@ -55,7 +54,7 @@ function How(props){
                         <li> <b>Knee Pain: </b> Oval, marked B,  <b> $1.20 </b> </li> 
                         <li> <b>Addy: </b> White, Square, <b> $.80 </b> </li> 
                         <li> <b>Early Balding Treatment:</b> Red, Small, marked B, <b> $1.55 </b> </li> 
-                        <li> <b> Diarrhea relieve: </b> White, Circular, marked B, <b> $1.30 </b> </li> 
+                        <li> <b> Diarrhea Laxatives: </b> White, Circular, marked B, <b> $1.30 </b> </li> 
                         <li> <b> High Blood Pressure: </b> Gray, Large, marked A, <b> $2.00 </b> </li> 
                         <li> <b> High Cholesterol: </b> Gray, marked C, <b> $.50 </b> </li> 
                         <li> <b> Nausea Medication: </b> Medium, marked A, <b>$3.00 </b>  </li> 

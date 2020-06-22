@@ -8,7 +8,7 @@ class Password extends Component {
     }
 
     submitAnswer = () => { 
-        if (this.props.vals.who.toLocaleLowerCase().trim() === "jerry" && this.props.vals.how.toLocaleLowerCase().trim() === "7" && this.props.vals.why.toLocaleLowerCase().trim() === "money") { 
+        if (this.props.vals.who.toLocaleLowerCase().trim() === "jerry" && this.props.vals.how.toLocaleLowerCase().trim() === "nausea" && this.props.vals.why.toLocaleLowerCase().trim() === "money") { 
             this.props.solved([9]);
             this.props.change("password", "solved", true);
             
@@ -53,13 +53,16 @@ class Password extends Component {
                     />
                     
                     <h4> How? </h4> 
-                    <input 
-                        name = "how"
-                        type = "text"
-                        maxLength = "2"
-                        value = {this.props.vals.how}
-                        onChange = {this.handleAnyChange}
-                    />
+
+                    <select name={"how"} value = {this.props.vals.how} onChange = {this.handleAnyChange}> 
+                        <option value = "">  </option>
+                        <option value = "Diarrhea"> Diarrhea </option> 
+                        <option value = "Cholesteroal"> High Cholesterol </option> 
+                        <option value = "Nausea"> Nausea </option> 
+                        <option value = "Viagra"> Viagra </option> 
+                        <option value = "Heart"> Heart Disease PRevention </option> 
+                        
+                    </select> 
 
                     <div class = "closing"> 
                         <p> Sincerely, </p>  
