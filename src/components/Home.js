@@ -27,6 +27,7 @@ function Home(props){
                         mirror reality, and we apologize if anything comes across as offensive as it mostly certainly wasn't 
                         our intention! 
                     </p>
+                    <p> <a href = "https://www.escapeit.xyz" target="_blank"> Other Escape Rooms </a> </p>
                     <div class = "buttonhold">  
                         {button1}
                     </div> 
