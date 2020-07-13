@@ -60,7 +60,7 @@ class Password extends Component {
                         <option value = "Cholesteroal"> High Cholesterol </option> 
                         <option value = "Nausea"> Nausea </option> 
                         <option value = "Viagra"> Viagra </option> 
-                        <option value = "Heart"> Heart Disease PRevention </option> 
+                        <option value = "Heart"> Heart Disease Prevention </option> 
                         
                     </select> 
 

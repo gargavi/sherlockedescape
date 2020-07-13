@@ -33,7 +33,7 @@ const Starting = (props) => {
                                         <li> Replaced Knee </li> 
                                         <li> Type 2 Diabetes </li> 
                                         <li> Early Balding </li>
-                                        <li> High Blood Pressue </li> 
+                                        <li> High Blood Pressure </li> 
                                     </td> 
                                 </tr> 
                             </tbody> 
