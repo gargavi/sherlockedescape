@@ -16,6 +16,7 @@ import Killer from "./components/killer";
 import Motive from "./components/motive";
 import How from "./components/how";
 import Congrats from "./components/congrats";
+import Solution from "./components/solutions";
 
 if (!String.prototype.trim) {
     String.prototype.trim = function () {
@@ -238,6 +239,7 @@ class App extends Component {
                                 <Route path = "/how" render = {(props) => <How {...props} active = {this.state.stages[7]} vals = {this.state.how} change = {this.handlevalueChange} hints = {this.state.hints.hints} />} />
                                 <Route path = "/password" render = {(props) => <Password {...props} vals = {this.state.password} succmet = {this.successfulmetric} solved = {this.setsuccess} change = {this.handlevalueChange} active = {this.state.stages[8]}/>}/>     
                                 <Route path = "/congrats" render = {(props) => <Congrats {...props} minutes = {this.state.starting_minutes - this.state.minutes} seconds = {this.state.seconds} active = {this.state.stages[9]} name = {this.state.password.name} />}/>     
+                                <Route path = "/solutions" render = {(props) => <Solution {...props} active = {this.state.stages[9]} />} />
                             </Switch>
                         </div> 
                         <div class = "col-md-3">

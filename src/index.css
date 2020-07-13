@@ -99,4 +99,11 @@ body {
   width: 20% !important;
 }
 
+.letter iframe { 
+  max-height: 350px; 
+  overflow: auto;
+}
 
+.letter.solutions p { 
+  font-size: 15px;
+}
