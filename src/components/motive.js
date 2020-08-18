@@ -88,7 +88,7 @@ class Motive extends Component {
                     {
                         num: "6", 
                         title: "Final Hint: Everything ",
-                        body: "Black: Months, Red: Three, Gold: Princesses, Green: Fibonaaci, Purple: See You; " 
+                        body: "Black: Months, Red: Three, Gold: Princesses, Green: Fibonacci, Purple: See You; " 
                     }
                 ].slice(0, this.props.vals.hints)
                 const hints = <Hint
